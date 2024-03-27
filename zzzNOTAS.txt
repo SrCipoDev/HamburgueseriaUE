@@ -1,0 +1,49 @@
+Tras crear el proyecto: composer create-project laravel/laravel:^10.0 gamburgueseriaUE
+Crear controlador: php artisan make:controller HomeController
+Asignar un controlador a una ruta: 
+    1º use App\Http\Controllers 
+    2º Crear la función que lo llame
+    3ºCrear la ruta
+    4º añadir los use app necesarios
+Creada la ruta hay que crear los métodos que llamarán a dichas rutas y qué van a tener dentro (funciones)
+
+        Route::get('categorias', [CategoriaController::class, 'index']);
+        Route::get('categorias/create', [CategoriaController::class, 'create']);
+        Route::get('categorias/{categoria}', [CategoriaController::class, 'show']);
+
+
+Se puede crear un grupo de rutas :  
+        Route::controller(CategoriaController)->group(function(){
+            Route::get('categorias', 'index');
+            Route::get('categorias/create', 'create');
+            Route::get('categorias/{categoria}', 'show');
+        })
+
+En los controladores, se devuelve la vista utilizando return view ('nobredelavisa');
+
+PAra quitarse duplicidad de código, se utiliza blade y sus directivas en la carpeta de layouts.plantillas
+
+Una vez creadas, hay que migrar la bbdd, tiene muchas ventajas de cara a trabajar en equipo
+    php artisan make:migration +nombre
+
+ORM Eloquent para llenar la bbdd de datos inventados y poder ir trabajando con ella. se tienen que crear modelos: 
+    php artisan make:model +nombre
+    Para rellenar se utiliza tinker con:
+        php artisan tinker
+        use namespace +nombre modelo;
+        $nombre = new Nombre; (en este caso, categoria)
+        Aquí se ponen todos los campos que se quieran rellenar
+    Una vez rellenado, se debe de guardar para cargarlo en la BBDD $nombre->save();
+Se crean factories para rellenar con datos de prueba parte de la BBDD.
+    php artisan make:factory +nombreFactory (por convenio)
+    
+Si quieres recuperar datos que ya están en phpmyadmin, se utiliza tinker
+    -php artisan tinker
+    una vez en la terminal de tinker, hay que indicar qué modelo se va a utilizar y tomar los datos
+        use App\Models\Categoria; por ejemplo
+        $categoria = Categoria::all();
+            Esto devuelve un array con todos los registros que haya.
+
+Hay que darle nombre a las rutas, y luego se les llama desde las vistas
+    {{route('nombreruta')}}
+    Esto se hace para poder llamar a las rutas sin tener que modificarlo cuando se cambie la url por el motivo que sea (de español a inglés por ejemplo) Categorias -> categories, si se le da un nombre, se solventa ese problema.
