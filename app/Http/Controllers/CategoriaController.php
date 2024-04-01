@@ -5,11 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
 
+
 class CategoriaController extends Controller
 {
     public function index() {
+        
 
-        $categorias = Categoria::paginate(3);
+        $categorias = Categoria::paginate(4);
 
         return view('categorias.index', compact('categorias'));
     }
@@ -25,7 +27,7 @@ class CategoriaController extends Controller
         $categoria->descripcion_categoria = $request->descripcion_categoria;
 
         $categoria->save();
-        return redirect()->route('categorias.create');
+        return redirect()->route('categorias.show', ['nombre_categoria' => $categoria->nombre_categoria]); //redirecciona a la categoria recien creada
     }
 
 /*     public function show($nombre_categoria){
@@ -34,9 +36,21 @@ class CategoriaController extends Controller
         return view('categorias.show', compact('nombre_categoria')) ;
     } */
     public function show($nombre_categoria) {
-        $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();
+        $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();//Al estar utilizando el nombre para las urls en lugar del id, hay que ponerlo así
         
         return view('categorias.show', compact('categoria'));
+    }
+    
+    public function edit ($nombre_categoria){
+        $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first(); 
+        return view('categorias.edit', compact('categoria'));
+    }
+    public function update(Request $request, $nombre_categoria) {
+        $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();
+        $categoria->nombre_categoria = $request->nombre_categoria;
+        $categoria->descripcion_categoria = $request->descripcion_categoria;
+        $categoria->save();
+        return redirect()->route('categorias.show', ['nombre_categoria' => $categoria->nombre_categoria]);
     }
     
 }
