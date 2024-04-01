@@ -27,7 +27,6 @@ body {
     font-weight: 400;
     line-height: 1.5;
     text-align: left;
-
 }
 
 a {
@@ -47,6 +46,12 @@ hr {
     margin: auto;
     text-align: center;
 }
+
+/*ETIQUETAS GENERICAS*/
+.background-white {
+    background-color: var(--white);
+}
+
 
 /*MENU PRINCIPAL*/
 .navbar {
@@ -100,10 +105,13 @@ hr {
     font-weight: 500;
 }
 
-
-.background-white {
-    background-color: var(--white);
+.slider-img img {
+    max-width: 1200px;
+    min-height: 400px;
+    width: auto;
+    height: auto;
 }
+
 
 /* SOBRE NOSOTROS */
 #about .col-md-6.p-0 {
