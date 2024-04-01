@@ -37,12 +37,10 @@ Route::prefix('admin')->group(function () {
 });
 
 
-// Route::get('/', IndexController::class)->name('index');
-
-
-// Route::controller(CategoriaController::class)->group(function () {
-//    Route::get('categorias',                'index')->name('categorias.index');
-//    Route::get('categorias/create',         'create')->name('categorias.create');
-//    Route::get('categorias/{nombre_categoria}',    'show')->name('categorias.show');
-//    Route::post('categorias', 'storage')->name('categorias.storage');
-// });
+Route::get('/', IndexController::class)->name('index');
+Route::controller(CategoriaController::class)->group(function () {
+   Route::get('categorias',                'index')->name('categorias.index');
+   Route::get('categorias/create',         'create')->name('categorias.create');
+   Route::get('categorias/{nombre_categoria}',    'show')->name('categorias.show');
+   Route::post('categorias', 'storage')->name('categorias.storage');
+});
