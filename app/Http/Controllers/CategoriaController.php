@@ -9,9 +9,8 @@ use Illuminate\Http\Request;
 class CategoriaController extends Controller
 {
     public function index() {
-        
-
         $categorias = Categoria::paginate(4);
+        //Cuantas categorías se muestran por página
 
         return view('categorias.index', compact('categorias'));
     }
@@ -27,17 +26,15 @@ class CategoriaController extends Controller
         $categoria->descripcion_categoria = $request->descripcion_categoria;
 
         $categoria->save();
-        return redirect()->route('categorias.show', ['nombre_categoria' => $categoria->nombre_categoria]); //redirecciona a la categoria recien creada
+        return redirect()->route('categorias.show', ['nombre_categoria' => $categoria->nombre_categoria]); 
+        //redirecciona a la categoria recien creada
     }
 
-/*     public function show($nombre_categoria){
-        $categoria = Categoria::find($nombre_categoria);
-    
-        return view('categorias.show', compact('nombre_categoria')) ;
-    } */
+
     public function show($nombre_categoria) {
-        $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();//Al estar utilizando el nombre para las urls en lugar del id, hay que ponerlo así
-        
+        $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();
+        //Al estar utilizando el nombre para las urls en lugar del id, hay que ponerlo así
+
         return view('categorias.show', compact('categoria'));
     }
     
