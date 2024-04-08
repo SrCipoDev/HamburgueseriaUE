@@ -37,7 +37,7 @@ Route::prefix('admin')->group(function () {
 });
 
 
-// Route::get('/', IndexController::class)->name('index');
+Route::get('/', IndexController::class)->name('index');
 
 
 // Route::controller(CategoriaController::class)->group(function () {
