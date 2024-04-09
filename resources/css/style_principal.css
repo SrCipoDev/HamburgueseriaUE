@@ -1,0 +1,129 @@
+:root {
+    --white: #fff;
+    --black: #000; 
+
+    --red: #d30d34;
+    --dark-red: #FA0034;
+
+    --dark-gray: #343A40; 
+    --light-gray: #ebd8d8;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* ETIQUETAS HTML*/
+* {
+    margin:0px;
+    padding: 0px;
+    box-sizing: inherit;
+    text-decoration: none;
+}
+
+body {
+    font-family: var(--font-family-sans-serif);
+    color:var(--white);
+    background-color: var(--dark-gray) !important;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--light-gray);
+    text-decoration: none;
+}
+
+hr {
+    height: 2px; 
+    background-color:var(--dark-red);
+    width: 80%;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
+/*MENU PRINCIPAL*/
+.navbar {
+    background-color: var(--dark-gray) !important;
+}
+
+.custom-navbar {
+    background: var(--dark-gray);
+    border-bottom: 1px solid var(--black);
+    color: var(--white);
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+/*MENÚ PRINCIPAL -- ELEMENTOS*/
+.nav-link {
+    font-weight: 500;
+}
+
+/*MENU PRINCIPAL -- BOTONES (INICIO + REGISTRO)*/
+.button {
+    background-color: var(--dark-red);
+    color: var(--white)!important;
+    margin: 2px;
+    padding: 2px;
+}
+
+.button:hover {
+    background-color: var(--red);
+    margin: 2px;
+    color: var(--white);;
+    border-color: var(--black);
+}
+
+
+
+/*SLIDER*/
+.overlay {
+    margin-top: 00px;
+    background-image: url(../img/slider2.jpg); 
+    height: 30em;
+}
+
+/*SLIDER BUTTON*/
+.slider-button {
+    font-weight: 500;
+    padding: 15px;
+    font-weight: 500;
+}
+
+
+.background-white {
+    background-color: var(--white);
+}
+
+/* SOBRE NOSOTROS */
+#about .col-md-6.p-0 {
+    background-color: #f8f9fa; /* Color de fondo del bloque de texto */
+}
+
+#about .col-md-6.p-0 .p-5 {
+    padding: 50px; /* Ajusta el relleno según sea necesario */
+}
+
+#about .col-md-6.p-0 h2 {
+    color: #333; /* Color del título */
+}
+
+#about .col-md-6.p-0 p {
+    color: #666; /* Color del texto */
+}
+
+/* Limitar el ancho de la imagen */
+#about .col-md-6 img {
+    max-width: 100%; /* Limita el ancho de la imagen al 50% del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
