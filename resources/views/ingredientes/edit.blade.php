@@ -3,7 +3,7 @@
 @section('title','ingredientes edit')
 
 @section('content')
-    <h1>Bienvenido a la edición de la ingrediente</h1>
+    <h1>Bienvenido a la edición del ingrediente</h1>
     <a href="{{route('ingredientes.index')}}">Volver a los ingredientes</a>
     <form action="{{route('ingredientes.update', $ingrediente->nombre_ingrediente)}}" method="POST">
         @method('put')
@@ -11,12 +11,19 @@
         {{-- es el token, seguridad de laravel --}}
         <br>
         <label>nombre_ingrediente:
-            <input type="text" name="nombre_ingrediente" value="{{$ingrediente->nombre_ingrediente}}">
+            <input type="text" name="nombre_ingrediente" value="{{old ('nombre_ingrediente', $ingrediente->nombre_ingrediente)}}">
+            {{-- old guarda lo que había escrito al fallar la validación --}}
         </label>
+        @error('nombre_ingrediente')
+            {{$message}}
+        @enderror
         <br>
         <label>descripcion_ingrediente:
             <textarea name="descripcion_ingrediente" rows = 4>{{$ingrediente->descripcion_ingrediente}}</textarea>
         </label>
+        @error('descripcion_ingrediente')
+            {{$message}}
+        @enderror
         <br>
         <button type="submit">Editar ingrediente</button>
     </form>

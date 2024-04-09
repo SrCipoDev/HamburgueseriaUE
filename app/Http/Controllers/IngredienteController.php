@@ -20,6 +20,11 @@ class IngredienteController extends Controller
     }
 
     public function storage(Request $request){
+        $request->validate([
+            'nombre_ingrediente'=>'required',
+            'descripcion_ingrediente'=>'required'
+        ]);
+
         $ingrediente = new Ingrediente();
 
         $ingrediente->nombre_ingrediente = $request->nombre_ingrediente;
@@ -43,6 +48,12 @@ class IngredienteController extends Controller
         return view('ingredientes.edit', compact('ingrediente'));
     }
     public function update(Request $request, $nombre_ingrediente) {
+
+        $request->validate([
+            'nombre_ingrediente'=>'required',
+            'descripcion_ingrediente'=>'required'
+        ]);
+        
         $ingrediente = Ingrediente::where('nombre_ingrediente', $nombre_ingrediente)->first();
         $ingrediente->nombre_ingrediente = $request->nombre_ingrediente;
         $ingrediente->descripcion_ingrediente = $request->descripcion_ingrediente;

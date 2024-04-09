@@ -11,12 +11,18 @@
         {{-- es el token, seguridad de laravel --}}
         <br>
         <label>nombre_categoria:
-            <input type="text" name="nombre_categoria" value="{{$categoria->nombre_categoria}}">
-        </label> 
+            <input type="text" name="nombre_categoria" value="{{old ('nombre_categoria',$categoria->nombre_categoria)}}">
+        </label>
+        @error('nombre_categoria')
+            {{$message}}
+        @enderror
         <br>
         <label>descripcion_categoria:
             <textarea name="descripcion_categoria" rows = 4>{{$categoria->descripcion_categoria}}</textarea>
-        </label> 
+        </label>
+        @error('descripcion_categoria')
+            {{$message}}
+        @enderror
         <br>
         <button type="submit">Editar categoria</button>
     </form>
