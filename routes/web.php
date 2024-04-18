@@ -40,9 +40,21 @@ Route::prefix('admin')->group(function () {
 Route::get('/', IndexController::class)->name('index');
 
 
-// Route::controller(CategoriaController::class)->group(function () {
-//    Route::get('categorias',                'index')->name('categorias.index');
-//    Route::get('categorias/create',         'create')->name('categorias.create');
-//    Route::get('categorias/{nombre_categoria}',    'show')->name('categorias.show');
-//    Route::post('categorias', 'storage')->name('categorias.storage');
-// });
+Route::get('/', IndexController::class)->name('index');
+Route::controller(CategoriaController::class)->group(function () {
+   Route::get  ('categorias',                           'index')     ->name('categorias.index');
+   Route::get  ('categorias/create',                    'create')    ->name('categorias.create');
+   Route::get  ('categorias/{nombre_categoria}',        'show')      ->name('categorias.show');
+   Route::post ('categorias',                          'storage')    ->name('categorias.storage');
+   Route::get  ('categorias/{nombre_categoria}/edit',   'edit')      ->name('categorias.edit');
+   Route::put  ('categorias/{nombre_categoria}',        'update')    ->name('categorias.update');
+});
+
+Route::controller(IngredienteController::class)->group(function () {
+   Route::get  ('ingredientes',                               'index')     ->name('ingredientes.index');
+   Route::get  ('ingredientes/create',                        'create')    ->name('ingredientes.create');
+   Route::get  ('ingredientes/{nombre_ingrediente}',          'show')      ->name('ingredientes.show');
+   Route::post ('ingredientes',                              'storage')    ->name('ingredientes.storage');
+   Route::get  ('ingredientes/{nombre_ingrediente}/edit',     'edit')      ->name('ingredientes.edit');
+   Route::put  ('ingredientes/{nombre_ingrediente}',          'update')    ->name('ingredientes.update');
+});
