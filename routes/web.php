@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\IngredienteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ use App\Http\Controllers\CategoriaController;
 Route::prefix('admin')->group(function () {
    Route::get('/productos', function () {
       return view('admin.productos');
+
    });
 
    Route::get('/producto/editar', function () {
@@ -35,9 +37,6 @@ Route::prefix('admin')->group(function () {
       return view('admin.opciones');
    });
 });
-
-
-Route::get('/', IndexController::class)->name('index');
 
 
 Route::get('/', IndexController::class)->name('index');

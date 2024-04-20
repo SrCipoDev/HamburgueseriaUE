@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Categoria extends Model
+class Ingrediente extends Model
 {
     use HasFactory;
-    protected $primaryKey = 'id_categoria'; // añadido para facilitar las rutas
+    protected $primaryKey = 'id_ingrediente'; // añadido para facilitar las rutas
 }
