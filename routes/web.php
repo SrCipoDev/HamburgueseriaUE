@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\CartaController;          /*AÑADIDO POR NEREA PARA MOSTRAR ARCHIVO carta.blade.php*/
+
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\IngredienteController;
 
@@ -15,11 +17,42 @@ use App\Http\Controllers\IngredienteController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// RUTAS PARA INDEX
+Route::get('/', IndexController::class)->name('index');
+
+// RUTA PARA PAGINA CARTA
+Route::get('/carta', [CartaController::class, '__invoke'])->name('carta.index');
+
+
+// RUTAS PARA CATEGORIAS
+Route::controller(CategoriaController::class)->group(function () {
+   Route::get('categorias',                           'index')->name('categorias.index');
+   Route::get('categorias/create',                    'create')->name('categorias.create');
+   Route::get('categorias/{nombre_categoria}',        'show')->name('categorias.show');
+   Route::post('categorias',                          'storage')->name('categorias.storage');
+   Route::get('categorias/{nombre_categoria}/edit',   'edit')->name('categorias.edit');
+   Route::put('categorias/{nombre_categoria}',        'update')->name('categorias.update');
+});
+
+
+// RUTAS PARA INGREDIENTES
+Route::controller(IngredienteController::class)->group(function () {
+   Route::get('ingredientes',                               'index')->name('ingredientes.index');
+   Route::get('ingredientes/create',                        'create')->name('ingredientes.create');
+   Route::get('ingredientes/{nombre_ingrediente}',          'show')->name('ingredientes.show');
+   Route::post('ingredientes',                              'storage')->name('ingredientes.storage');
+   Route::get('ingredientes/{nombre_ingrediente}/edit',     'edit')->name('ingredientes.edit');
+   Route::put('ingredientes/{nombre_ingrediente}',          'update')->name('ingredientes.update');
+});
+
+
+
+
 // Rutas para ver las vistas de admin
 Route::prefix('admin')->group(function () {
    Route::get('/productos', function () {
       return view('admin.productos');
-
    });
 
    Route::get('/producto/editar', function () {
@@ -36,24 +69,4 @@ Route::prefix('admin')->group(function () {
    Route::get('/opciones', function () {
       return view('admin.opciones');
    });
-});
-
-
-Route::get('/', IndexController::class)->name('index');
-Route::controller(CategoriaController::class)->group(function () {
-   Route::get  ('categorias',                           'index')     ->name('categorias.index');
-   Route::get  ('categorias/create',                    'create')    ->name('categorias.create');
-   Route::get  ('categorias/{nombre_categoria}',        'show')      ->name('categorias.show');
-   Route::post ('categorias',                          'storage')    ->name('categorias.storage');
-   Route::get  ('categorias/{nombre_categoria}/edit',   'edit')      ->name('categorias.edit');
-   Route::put  ('categorias/{nombre_categoria}',        'update')    ->name('categorias.update');
-});
-
-Route::controller(IngredienteController::class)->group(function () {
-   Route::get  ('ingredientes',                               'index')     ->name('ingredientes.index');
-   Route::get  ('ingredientes/create',                        'create')    ->name('ingredientes.create');
-   Route::get  ('ingredientes/{nombre_ingrediente}',          'show')      ->name('ingredientes.show');
-   Route::post ('ingredientes',                              'storage')    ->name('ingredientes.storage');
-   Route::get  ('ingredientes/{nombre_ingrediente}/edit',     'edit')      ->name('ingredientes.edit');
-   Route::put  ('ingredientes/{nombre_ingrediente}',          'update')    ->name('ingredientes.update');
 });
