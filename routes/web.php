@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\IngredienteController;
+use App\Http\Controllers\Auth\LoginRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,6 +41,8 @@ Route::prefix('admin')->group(function () {
 
 
 Route::get('/', IndexController::class)->name('index');
+
+
 Route::controller(CategoriaController::class)->group(function () {
    Route::get  ('categorias',                           'index')     ->name('categorias.index');
    Route::get  ('categorias/create',                    'create')    ->name('categorias.create');
@@ -56,4 +59,13 @@ Route::controller(IngredienteController::class)->group(function () {
    Route::post ('ingredientes',                              'storage')    ->name('ingredientes.storage');
    Route::get  ('ingredientes/{nombre_ingrediente}/edit',     'edit')      ->name('ingredientes.edit');
    Route::put  ('ingredientes/{nombre_ingrediente}',          'update')    ->name('ingredientes.update');
+});
+
+Route::controller(LoginRegisterController::class)->group(function() {
+   Route::get('/register', 'register')->name('register');
+   Route::post('/store', 'store')->name('store');
+   Route::get('/login', 'login')->name('login');
+   Route::post('/authenticate', 'authenticate')->name('authenticate');
+   Route::get('/dashboard', 'dashboard')->name('dashboard');
+   Route::post('/logout', 'logout')->name('logout');
 });

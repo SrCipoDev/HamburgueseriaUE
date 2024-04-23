@@ -6,14 +6,14 @@
     <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix"> 
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <!--navbar-button button-->
-            <span class="navbar-toggler-icon"></span> 
+            <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse"> 
             <!--MENU LATERAL IZQ-->
             <ul class="navbar-nav"> 
                 <li class="nav-item"> 
-                    <a class="nav-link" href="#home">Inicio</a> 
+                    <a class="nav-link" href="#home">Inicio</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#about">Sobre Nosotros</a>
@@ -53,18 +53,18 @@
                 <div class="carousel-item active">
                     <img class="d-block slider-img w-100" src="img/img-slider-3.jpg" alt="First slide">
                         <div class="carousel-caption">
-                            <h1 class="">Hamburgueseria UE</h1>         
-                            <h2 class="">Pide &amp; Disfruta</h2>            
-                            <a class="slider-button button" href="#menu">Realiza tu pedido</a>  
+                            <h1 class="">Hamburgueseria UE</h1>
+                            <h2 class="">Pide &amp; Disfruta</h2>
+                            <a class="slider-button button" href="#menu">Realiza tu pedido</a>
                         </div>
                 </div>
                 <!--SEGUNDA IMG SLIDER-->
                 <div class="carousel-item">
                     <img class="d-block slider-img w-100" src="../img/Hamburguesa_slider_5.jpg" alt="Second slide">
                     <div class="carousel-caption">
-                        <h1 class="">Hamburgueseria UE</h1>         
-                        <h2 class="">Pide &amp; Disfruta</h2>            
-                        <a class="slider-button button" href="#menu">Realiza tu pedido</a>  
+                        <h1 class="">Hamburgueseria UE</h1>
+                        <h2 class="">Pide &amp; Disfruta</h2>
+                        <a class="slider-button button" href="#menu">Realiza tu pedido</a>
                     </div>
                 </div>
                 <!--TERCERA IMG SLIDER-->
