@@ -26,7 +26,7 @@
             </ul>
 
             <!--LOGO HAMBURGUESERIA-->
-            <a class="navbar-brand m-auto" href="index.html">
+            <a class="navbar-brand m-auto" href="#home">
                 <!--<img style="width: 10em;" src="img/Logo-Hamburgueseria UE2.png" class="brand-img" alt="logo de nuestra hamburgueseria galicia">-->
                 <span class="brand-txt">Hamburguesaria UE</span>
             </a>
@@ -37,10 +37,10 @@
                     <a class="nav-link" href="#contacto">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" href="iniciosesion.html">Inicio Sesión</a>
+                    <a class="nav-link button" href="/login">Inicio Sesión</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" href="registro.html">Registrate</a>
+                    <a class="nav-link button" href="/register">Registrate</a>
                 </li>
             </ul>
         </div>
