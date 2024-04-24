@@ -8,22 +8,37 @@ use Illuminate\Http\Request;
 
 class CategoriaController extends Controller
 {
-    public function index() {
+    public function index()
+    {
         $categorias = Categoria::paginate(4);
         //Cuantas categorías se muestran por página
 
         return view('categorias.index', compact('categorias'));
     }
 
-    public function create(){
+    // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP
+    public function __invoke()
+    {
+        // Obtener las categorías que se mostrarán en la carta
+        $categorias = Categoria::paginate(4);
+
+        // Pasar las categorías a la vista
+        return view('carta', compact('categorias'));
+    } // FIN  DE LA VISTA CARTA
+
+    /*------------------------------*/
+
+    public function create()
+    {
         return view('categorias.create');
     }
 
-    public function storage(Request $request){
+    public function storage(Request $request)
+    {
         $request->validate([
-            'nombre_categoria'=>'required',
+            'nombre_categoria' => 'required',
             //es con un símbolo igual, fuerza que no se deje vacía
-            'descripcion_categoria'=>'required'
+            'descripcion_categoria' => 'required'
         ]);
 
         $categoria = new Categoria();
@@ -37,23 +52,26 @@ class CategoriaController extends Controller
     }
 
 
-    public function show($nombre_categoria) {
+    public function show($nombre_categoria)
+    {
         $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();
         //Al estar utilizando el nombre para las urls en lugar del id, hay que ponerlo así
 
         return view('categorias.show', compact('categoria'));
     }
-    
-    public function edit ($nombre_categoria){
+
+    public function edit($nombre_categoria)
+    {
         $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();
         return view('categorias.edit', compact('categoria'));
     }
-    public function update(Request $request, $nombre_categoria) {
+    public function update(Request $request, $nombre_categoria)
+    {
 
         $request->validate([
-            'nombre_categoria'=>'required',
+            'nombre_categoria' => 'required',
             //es con un símbolo igual, fuerza que no se deje vacía
-            'descripcion_categoria'=>'required'
+            'descripcion_categoria' => 'required'
         ]);
 
         $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\CartaController;          /*AÑADIDO POR NEREA PARA MOSTRAR ARCHIVO carta.blade.php*/
+
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\IngredienteController;
 use App\Http\Controllers\Auth\LoginRegisterController;
@@ -16,11 +18,17 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+// RUTAS PARA INDEX
+Route::get('/', IndexController::class)->name('index');
+
+// RUTA PARA PAGINA CARTA
+Route::get('/carta', [CartaController::class, '__invoke'])->name('carta.index');
+
 // Rutas para ver las vistas de admin
 Route::prefix('admin')->group(function () {
    Route::get('/productos', function () {
       return view('admin.productos');
-
    });
 
    Route::get('/producto/editar', function () {
@@ -38,8 +46,6 @@ Route::prefix('admin')->group(function () {
       return view('admin.opciones');
    });
 });
-
-
 Route::get('/', IndexController::class)->name('index');
 
 
@@ -64,12 +70,10 @@ Route::controller(IngredienteController::class)->group(function () {
 });
 
 Route::controller(LoginRegisterController::class)->group(function() {
-   Route::get('/register',                      'register')          ->name('register');
-   Route::post('/store',                        'store')             ->name('store');
-   Route::get('/login',                         'login')             ->name('login');
-   Route::post('/authenticate',                 'authenticate')      ->name('authenticate');
-   Route::get('/dashboard',                     'dashboard')         ->name('dashboard');
-   Route::post('/logout',                       'logout')            ->name('logout');
-   /* Route::delete('/login/{login}',              'destroy')           ->name('login.destroy');
-   Route::delete('/register/{register}',        'destroy')           ->name('registerdestroy'); */
+   Route::get('/register', 'register')->name('register');
+   Route::post('/store', 'store')->name('store');
+   Route::get('/login', 'login')->name('login');
+   Route::post('/authenticate', 'authenticate')->name('authenticate');
+   Route::get('/dashboard', 'dashboard')->name('dashboard');
+   Route::post('/logout', 'logout')->name('logout');
 });
