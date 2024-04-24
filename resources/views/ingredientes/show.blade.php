@@ -9,4 +9,9 @@
     <a href="{{route('ingredientes.edit', $ingrediente->nombre_ingrediente)}}">Editar ingrediente</a>
     <p>Esta es es ingrediente Nº: {{$ingrediente->id_ingrediente}}</p>
     <p>{{$ingrediente->descripcion_ingrediente}}</p>
+    <form action="{{route('ingredientes.destroy', $ingrediente)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar</button>
+    </form>
 @endsection

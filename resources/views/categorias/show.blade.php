@@ -9,4 +9,10 @@
     <a href="{{route('categorias.edit', $categoria->nombre_categoria)}}">Editar categoria</a>
     <p>Esta es la categoría: {{$categoria->id_categoria}}</p>
     <p>{{$categoria->descripcion_categoria}}</p>
+
+    <form action="{{route('categorias.destroy', $categoria)}}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar</button>
+    </form>
 @endsection

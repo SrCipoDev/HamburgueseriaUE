@@ -61,4 +61,8 @@ class IngredienteController extends Controller
         return redirect()->route('ingredientes.show', ['nombre_ingrediente' => $ingrediente->nombre_ingrediente]);
     }
     
+    public function destroy(Ingrediente $ingrediente) {
+        $ingrediente->delete();
+        return redirect()->route('ingredientes.index');
+    }
 }

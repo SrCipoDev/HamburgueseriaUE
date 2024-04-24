@@ -125,5 +125,10 @@ class LoginRegisterController extends Controller
         return redirect()->route('login')
             ->withSuccess('Se ha desconectado');
     }
-
+    public function destroy(User $login)
+    {
+        $login->delete();
+        return redirect()->route('Logins.index')
+            ->withSuccess('Se ha eliminado el registro');
+    }
 }
