@@ -37,10 +37,10 @@
                     <a class="nav-link" href="#contacto">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" href="/login">Inicio Sesión</a>
+                    <a class="nav-link button" href="{{ route('login') }}">Inicio Sesión</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" href="/register">Registrate</a>
+                    <a class="nav-link button" href="{{ route('register') }}">Registrate</a>
                 </li>
             </ul>
         </div>
@@ -56,24 +56,27 @@
                     <img class="d-block slider-img w-100" src="img/img-slider-3.jpg" alt="First slide">
                     <div class="carousel-caption">
                         <h1 class="">Hamburgueseria UE</h1>
+                        <br>
                         <h2 class="">Pide &amp; Disfruta</h2>
                         <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
                     </div>
                 </div>
                 <!--SEGUNDA IMG SLIDER-->
                 <div class="carousel-item">
-                    <img class="d-block slider-img w-100" src="../img/Hamburguesa_slider_5.jpg" alt="Second slide">
+                    <img class="d-block slider-img w-100" src="img/Hamburguesa_slider_5.jpg" alt="Second slide">
                     <div class="carousel-caption">
                         <h1 class="">Hamburgueseria UE</h1>
+                        <br>
                         <h2 class="">Pide &amp; Disfruta</h2>
                         <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
                     </div>
                 </div>
                 <!--TERCERA IMG SLIDER-->
                 <div class="carousel-item">
-                    <img class="d-block slider-img w-100" src="../img/tiramisu.jpg" alt="Third slide">
+                    <img class="d-block slider-img w-100" src="img/tiramisu.jpg" alt="Third slide">
                     <div class="carousel-caption">
                         <h1 class="">Hamburgueseria UE</h1>
+                        <br>
                         <h2 class="">Pide &amp; Disfruta</h2>
                         <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
                     </div>
@@ -97,7 +100,7 @@
         <div class="row">
             <!-- COLUMNA DE LA IZQUIERDA CON LA IMAGEN-->
             <div class="col-md-6">
-                <img class="img-fluid w-100" src="../img/Hamburguesa_fondo_blanco.jpg" alt="" />
+                <img class="img-fluid w-100" src="img/Hamburguesa_fondo_blanco.jpg" alt="" />
             </div>
             <!-- COLUMNA DE LA CERECHA CON EL TEXTO-->
             <div class="col-md-6 p-0">
@@ -169,7 +172,7 @@
                     <div class="col-md-4">
                         <div class="card bg-transparent border my-3 my-md-0">
                             <a href="" alt="">
-                                <img src="../img/hamburgers-with-beef.jpg" alt=""
+                                <img src="img/hamburgers-with-beef.jpg" alt=""
                                     class="rounded-0 card-img-top mg-responsive">
                                 <div class="card-body">
                                     <h4 class="pt20 pb20"> Hamburguesas de Ternera </h4> <!--AÑADIR ROUTE--> -->
@@ -184,7 +187,7 @@
                 <div class="col-md-4">
                     <div class="card bg-transparent border my-3 my-md-0">
                         <a href="" alt="">
-                            <img src="../img/" alt="" class="rounded-0 card-img-top mg-responsive">
+                            <img src="img/" alt="" class="rounded-0 card-img-top mg-responsive">
                             <div class="card-body">
                                 <h4 class="pt20 pb20"> Hamburguesas de Pollo </h4>
                                 <p class="text-white"> Descubre nuestra deliciosa selección de Hamburguesas Gourmet de
@@ -198,7 +201,7 @@
             <div class="col-md-4">
                 <div class="card bg-transparent border my-3 my-md-0">
                     <a href="" alt="">
-                        <img src="../img/blog-3.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
+                        <img src="img/blog-3.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
                         <div class="card-body">
                             <h4 class="pt20 pb20"> Hamburguesas Vegetales </h4>
                             <p class="text-white"> Explora nuestra variedad de Hamburguesas Gourmet Vegetales, elaboradas
@@ -218,7 +221,7 @@
             <!-- BOCADILLOS VEGETALES-->
             <div class="col-md-4 my-3 my-md-0">
                 <div class="card bg-transparent border">
-                    <img src="../img/blog-4.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
+                    <img src="img/blog-4.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
                     <div class="card-body">
                         <h4 class="pt20 pb20">Bocadillos Vegetales</h4>
                         <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident
@@ -229,7 +232,7 @@
             <!-- BOCADILLOS DE POLLO-->
             <div class="col-md-4 my-3 my-md-0">
                 <div class="card bg-transparent border">
-                    <img src="../img/food-5981258_1280.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
+                    <img src="img/food-5981258_1280.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
                     <div class="card-body">
                         <h4 class="pt20 pb20">Bocadillos de Pollo</h4>
                         <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident
@@ -240,7 +243,7 @@
             <!-- BOCADILLOS ESPECIALES-->
             <div class="col-md-4 my-3 my-md-0">
                 <div class="card bg-transparent border">
-                    <img src="../img/blog-6.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
+                    <img src="img/blog-6.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
                     <div class="card-body">
                         <h4 class="pt20 pb20">Bocadillos especiales</h4>
                         <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident

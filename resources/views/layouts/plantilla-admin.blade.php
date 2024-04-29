@@ -21,6 +21,7 @@
 </head>
 
 <body id="home" data-spy="scroll">
+    <a href="{{ route('index-admin') }}">Página principal</a>
 
     @yield('content')
 
@@ -40,7 +41,7 @@
                 <P class="text-muted"> C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid </P>
             </div>
             <div class="col-sm-5">
-                <h3><a class="button" href="{{ asset('plantilla-admin.blade.php') }}">Acceso Administrador</h3></a>
+                <h3><a class="button" href="{{ asset('plantilla-admin') }}">Acceso Administrador</h3></a>
             </div>
         </div>
     </div>
