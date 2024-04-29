@@ -40,7 +40,7 @@
                 <P class="text-muted"> C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid </P>
             </div>
             <div class="col-sm-5">
-                <h3><a class="button" href="{{ asset('plantilla-admin.blade.php') }}">Acceso Administrador</h3></a>
+                <p><a class="button" href="{{ route('admin.index') }}">Acceso Administrador</p></a>
             </div>
         </div>
     </div>

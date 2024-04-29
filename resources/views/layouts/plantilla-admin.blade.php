@@ -21,28 +21,25 @@
 </head>
 
 <body id="home" data-spy="scroll">
-    <a href="{{ route('index-admin') }}">Página principal</a>
 
     @yield('content')
 
     <!-- PIE DE PAGINA  -->
     <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
         <div class="row">
-            <div class="col-sm-5">
+            <div class="col-sm-3">
                 <h3>Email</h3>
                 <P class="text-muted">info@hamburgueseriagalicia.es</P>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-3">
                 <h3>Teléfono</h3>
                 <P class="text-muted"> 917 40 72 72 </P>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-3">
                 <h3>Visitanos en...</h3>
                 <P class="text-muted"> C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid </P>
             </div>
-            <div class="col-sm-5">
-                <h3><a class="button" href="{{ asset('plantilla-admin') }}">Acceso Administrador</h3></a>
-            </div>
+
         </div>
     </div>
     <!-- BARRA DERECHOS RESERVADOS -->

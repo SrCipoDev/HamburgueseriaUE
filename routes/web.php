@@ -7,6 +7,7 @@ use App\Http\Controllers\CartaController;          /*AÑADIDO POR NEREA PARA MOS
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\IngredienteController;
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\ProductoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +55,18 @@ Route::controller(LoginRegisterController::class)->group(function () {
    Route::get('/dashboard', 'dashboard')->name('dashboard');
    Route::post('/logout', 'logout')->name('logout');
 });
+
+// RUTAS PARA LAS VISTAS DE PRODUCTOS
+Route::controller(ProductoController::class)->group(function () {
+   Route::get('producto',                           'index')->name('producto.index');
+   Route::get('producto/create',                    'create')->name('producto.create');
+   Route::get('producto/{nombre_producto}',        'show')->name('producto.show');
+   Route::post('producto',                          'storage')->name('producto.storage');
+   Route::get('producto/{nombre_producto}/edit',   'edit')->name('producto.edit');
+   Route::put('producto/{nombre_producto}',        'update')->name('producto.update');
+});
+
+// RUTA PARA LA PAGINA DE ADMINISTRACION 
+Route::get('/admin', function () {
+   return view('admin.index');
+})->name('admin.index');
