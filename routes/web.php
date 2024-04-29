@@ -25,28 +25,6 @@ Route::get('/', IndexController::class)->name('index');
 // RUTA PARA PAGINA CARTA
 Route::get('/carta', [CartaController::class, 'index'])->name('carta.index');
 
-// Rutas para ver las vistas de admin
-/*Route::prefix('admin')->group(function () {
-   Route::get('/productos', function () {
-      return view('admin.productos');
-   });
-
-   Route::get('/producto/editar', function () {
-      return view('admin.producto-edit');
-   });
-
-   Route::get('/categorias', function () {
-      return view('admin.categorias');
-   });
-   Route::get('/categoria/editar', function () {
-      return view('admin.categoria-edit');
-   });
-
-   Route::get('/opciones', function () {
-      return view('admin.opciones');
-   });
-});*/
-
 // RUTAS PARA LAS VISTAS DE CATEGORIAS
 Route::controller(CategoriaController::class)->group(function () {
    Route::get('categorias',                           'index')->name('categorias.index');
