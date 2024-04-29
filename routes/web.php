@@ -23,10 +23,10 @@ use App\Http\Controllers\Auth\LoginRegisterController;
 Route::get('/', IndexController::class)->name('index');
 
 // RUTA PARA PAGINA CARTA
-Route::get('/carta', [CartaController::class, '__invoke'])->name('carta.index');
+Route::get('/carta', [CartaController::class, 'index'])->name('carta.index');
 
 // Rutas para ver las vistas de admin
-Route::prefix('admin')->group(function () {
+/*Route::prefix('admin')->group(function () {
    Route::get('/productos', function () {
       return view('admin.productos');
    });
@@ -45,29 +45,30 @@ Route::prefix('admin')->group(function () {
    Route::get('/opciones', function () {
       return view('admin.opciones');
    });
-});
-Route::get('/', IndexController::class)->name('index');
+});*/
 
-
+// RUTAS PARA LAS VISTAS DE CATEGORIAS
 Route::controller(CategoriaController::class)->group(function () {
-   Route::get  ('categorias',                           'index')     ->name('categorias.index');
-   Route::get  ('categorias/create',                    'create')    ->name('categorias.create');
-   Route::get  ('categorias/{nombre_categoria}',        'show')      ->name('categorias.show');
-   Route::post ('categorias',                          'storage')    ->name('categorias.storage');
-   Route::get  ('categorias/{nombre_categoria}/edit',   'edit')      ->name('categorias.edit');
-   Route::put  ('categorias/{nombre_categoria}',        'update')    ->name('categorias.update');
+   Route::get('categorias',                           'index')->name('categorias.index');
+   Route::get('categorias/create',                    'create')->name('categorias.create');
+   Route::get('categorias/{nombre_categoria}',        'show')->name('categorias.show');
+   Route::post('categorias',                          'storage')->name('categorias.storage');
+   Route::get('categorias/{nombre_categoria}/edit',   'edit')->name('categorias.edit');
+   Route::put('categorias/{nombre_categoria}',        'update')->name('categorias.update');
 });
 
+// RUTAS PARA LAS VISTAS DE INGREDIENTES
 Route::controller(IngredienteController::class)->group(function () {
-   Route::get  ('ingredientes',                               'index')     ->name('ingredientes.index');
-   Route::get  ('ingredientes/create',                        'create')    ->name('ingredientes.create');
-   Route::get  ('ingredientes/{nombre_ingrediente}',          'show')      ->name('ingredientes.show');
-   Route::post ('ingredientes',                              'storage')    ->name('ingredientes.storage');
-   Route::get  ('ingredientes/{nombre_ingrediente}/edit',     'edit')      ->name('ingredientes.edit');
-   Route::put  ('ingredientes/{nombre_ingrediente}',          'update')    ->name('ingredientes.update');
+   Route::get('ingredientes',                               'index')->name('ingredientes.index');
+   Route::get('ingredientes/create',                        'create')->name('ingredientes.create');
+   Route::get('ingredientes/{nombre_ingrediente}',          'show')->name('ingredientes.show');
+   Route::post('ingredientes',                              'storage')->name('ingredientes.storage');
+   Route::get('ingredientes/{nombre_ingrediente}/edit',     'edit')->name('ingredientes.edit');
+   Route::put('ingredientes/{nombre_ingrediente}',          'update')->name('ingredientes.update');
 });
 
-Route::controller(LoginRegisterController::class)->group(function() {
+// RUTAS PARA LAS VISTAS DE AUTENTIFICACION -- LOGIN -- REGISTER 
+Route::controller(LoginRegisterController::class)->group(function () {
    Route::get('/register', 'register')->name('register');
    Route::post('/store', 'store')->name('store');
    Route::get('/login', 'login')->name('login');
