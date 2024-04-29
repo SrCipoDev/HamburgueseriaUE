@@ -288,7 +288,7 @@
             </div>
             <div class="col-md-4 my-3 my-md-0">
                 <div class="testmonial-card">
-                    <h3 class="testmonial-title">Mariam Blanco</h3>
+                    <h3 class="testmonial-title">Angel Nerea</h3>
                     <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
                     <div class="testmonial-body">
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, nam. Earum nobis eligendi,

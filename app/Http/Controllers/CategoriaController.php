@@ -16,18 +16,6 @@ class CategoriaController extends Controller
         return view('categorias.index', compact('categorias'));
     }
 
-    // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP
-    public function __invoke()
-    {
-        // Obtener las categorías que se mostrarán en la carta
-        $categorias = Categoria::paginate(4);
-
-        // Pasar las categorías a la vista
-        return view('carta', compact('categorias'));
-    } // FIN  DE LA VISTA CARTA
-
-    /*------------------------------*/
-
     public function create()
     {
         return view('categorias.create');
@@ -80,4 +68,16 @@ class CategoriaController extends Controller
         $categoria->save();
         return redirect()->route('categorias.show', ['nombre_categoria' => $categoria->nombre_categoria]);
     }
+
+    // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP
+    public function __invoke()
+    {
+        // Obtener las categorías que se mostrarán en la carta
+        $categorias = Categoria::paginate(4);
+
+        // Pasar las categorías a la vista
+        return view('carta', compact('categorias'));
+    } // FIN  DE LA VISTA CARTA
+
+    /*------------------------------*/
 }

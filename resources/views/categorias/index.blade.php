@@ -16,7 +16,7 @@
                             <!-- Agregar desplegable de productos -->
                             <ul class="submenu">
                                 @foreach ($categoria->productos as $producto)
-                                    <li><a href="#">{{ $producto->nombre }}</a></li>
+                                    <li><a href="#">{{ $producto->nombre_producto }}</a></li>
                                 @endforeach
                             </ul>
                         </li>
@@ -25,7 +25,6 @@
             </div>
             <div class="col-md-9">
                 <!-- CONTENIDO DE LA PÁGINA -->
-                <!-- Puedes agregar contenido específico de la página aquí -->
             </div>
         </div>
     </div>
