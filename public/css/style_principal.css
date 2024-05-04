@@ -32,6 +32,7 @@ body {
 
 a {
     text-decoration: none;
+    color: var(--light-gray);
 }
 
 a:hover {
@@ -67,6 +68,7 @@ hr {
 /*MENÚ PRINCIPAL -- ELEMENTOS*/
 .nav-link {
     font-weight: 500;
+    color:white;
 }
 
 /*MENU PRINCIPAL -- BOTONES (INICIO + REGISTRO)*/

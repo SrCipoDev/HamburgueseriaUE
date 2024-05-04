@@ -61,9 +61,10 @@
                         <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
                     </div>
                 </div>
+
                 <!--SEGUNDA IMG SLIDER-->
                 <div class="carousel-item">
-                    <img class="d-block slider-img w-100" src="img/Hamburguesa_slider_5.jpg" alt="Second slide">
+                    <img class="d-block slider-img w-100" src="img/Hamburguesa_slider_7.jpg" alt="Second slide">
                     <div class="carousel-caption">
                         <h1 class="">Hamburgueseria UE</h1>
                         <br>
@@ -71,28 +72,28 @@
                         <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
                     </div>
                 </div>
-                <!--TERCERA IMG SLIDER-->
-                <div class="carousel-item">
-                    <img class="d-block slider-img w-100" src="img/tiramisu.jpg" alt="Third slide">
-                    <div class="carousel-caption">
-                        <h1 class="">Hamburgueseria UE</h1>
-                        <br>
-                        <h2 class="">Pide &amp; Disfruta</h2>
-                        <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
-                    </div>
-                </div>
+                <!--TERCERA IMG SLIDER--><!--
+                            <div class="carousel-item">
+                                <img class="d-block slider-img w-100" src="img/tiramisu2.jpg" alt="Third slide">
+                                <div class="carousel-caption">
+                                    <h1 class="">Hamburgueseria UE</h1>
+                                    <br>
+                                    <h2 class="">Pide &amp; Disfruta</h2>
+                                    <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
+                                </div>
+                            </div>
+                        </div>-->
+                <!--BOTONES ANTERIOR SLIDER-->
+                <a class="carousel-control-prev" href="#sliderHome" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <!--BOTONES SIGUIENTE SLIDER-->
+                <a class="carousel-control-next" href="#sliderHome" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
             </div>
-            <!--BOTONES ANTERIOR SLIDER-->
-            <a class="carousel-control-prev" href="#sliderHome" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <!--BOTONES SIGUIENTE SLIDER-->
-            <a class="carousel-control-next" href="#sliderHome" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
-        </div>
     </header>
 
     <!--  SOBRE NOSOTROS  -->

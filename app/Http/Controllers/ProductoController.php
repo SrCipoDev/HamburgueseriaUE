@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Producto;
+use App\Models\Categoria;
 use Illuminate\Http\Request;
 
 class ProductoController extends Controller
@@ -10,9 +11,10 @@ class ProductoController extends Controller
     /*** Display a listing of the resource. */
     public function index()
     {
-        $categorias = Producto::paginate(100);
-        return view('producto.index', compact('producto'));
+        $categorias = Categoria::all(); // Recupera todas las categorías
+        return view('producto.index', compact('categorias')); // Pasa las categorías a la vista
     }
+
 
     /*** Show the form for creating a new resource. */
     public function create()
@@ -60,8 +62,7 @@ class ProductoController extends Controller
 
         $request->validate([
             'nombre_producto' => 'required',
-            //es con un símbolo igual, fuerza que no se deje vacía
-            'descripcion_producto' => 'required'
+            'descripcion_producto' => 'required'    //es con un símbolo igual, fuerza que no se deje vacía
         ]);
 
         $producto = Producto::where('nombre_producto', $nombre_producto)->first();
@@ -72,8 +73,8 @@ class ProductoController extends Controller
     }
 
     /*** Remove the specified resource from storage.*/
-    public function destroy(string $id)
+    /*public function destroy(string $id)
     {
         //
-    }
+    }*/
 }

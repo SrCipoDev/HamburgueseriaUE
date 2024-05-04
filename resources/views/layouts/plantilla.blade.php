@@ -14,6 +14,7 @@
 
     <!-- ESTILO PRINCIPAL DE LA WEB PUBLICA --->
     <link rel="stylesheet" href="{{ asset('css/style_principal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carta.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
@@ -24,16 +25,64 @@
 
     @yield('content')
 
+    <!-- MENU -->
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!--navbar-button button-->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+            <!--MENU LATERAL IZQ-->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('index') }}#home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('index') }}#about">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('index') }}#menu">Nuestra Carta</a>
+                </li>
+            </ul>
+
+            <!--LOGO HAMBURGUESERIA-->
+            <a class="navbar-brand m-auto" href="{{ route('index') }}#home">
+                <!--<img style="width: 10em;" src="img/Logo-Hamburgueseria UE2.png" class="brand-img" alt="logo de nuestra hamburgueseria galicia">-->
+                <span class="brand-txt">Hamburguesaria UE</span>
+            </a>
+
+            <!--MENU LATERAL DRCH-->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button" href="{{ route('login') }}">Inicio Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button" href="{{ route('register') }}">Registrate</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
     <!-- PIE DE PAGINA  -->
     <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
         <div class="row">
             <div class="col-sm-5">
                 <h3>Email</h3>
-                <P class="text-muted">info@hamburgueseriagalicia.es</P>
+                <P class="text-muted"><a href="mailto:info@hamburgueseriagalicia.es">info@hamburgueseriagalicia.es</a>
+                </P>
             </div>
             <div class="col-sm-5">
                 <h3>Teléfono</h3>
-                <P class="text-muted"> 917 40 72 72 </P>
+                <P class="text-muted"> <a href="tel:917407272">917 40 72 72</a></P>
             </div>
             <div class="col-sm-5">
                 <h3>Visitanos en...</h3>

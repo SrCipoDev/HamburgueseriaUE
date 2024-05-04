@@ -1,23 +1,33 @@
 @extends('layouts.plantilla')
-
-@section('title', 'Hamburgueseria UE')
+@section('title', 'Hamburgueseria UE - Menú')
 
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <!--MENÚ IZQUIERDA DE CATEGORIAS -->
-                <h3>Categorías</h3>
-                <ul>
+            <div class="contenido-principal">
+                <!--MENÚ CATEGORIAS -->
+                <h5 class="text-center">Realiza tu pedido ahora!</h5>
+                <ul class="text-center navbar-nav">
                     @foreach ($categorias as $categoria)
-                        <li><a
-                                href="{{ route('categorias.show', $categoria->nombre_categoria) }}">{{ $categoria->nombre_categoria }}</a>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('categorias.show', $categoria->nombre_categoria) }}">
+                                {{ $categoria->nombre_categoria }}
+                            </a>
+
+                            <ul class="text-center navbar-nav">
+                                @foreach ($categoria->productos as $producto)
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('producto.show', $producto->nombre_producto) }}">
+                                            {{ $producto->nombre_producto }}
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
                         </li>
                     @endforeach
                 </ul>
             </div>
-            <div class="col-md-9">
-            </div>
+
         </div>
     </div>
 @endsection

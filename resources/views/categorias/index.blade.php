@@ -3,16 +3,17 @@
 @section('title', 'Hamburgueseria UE')
 
 @section('content')
-    <div class="container">
+    <div class="container contenido-principal">
         <div class="row">
-            <div class="col-md-3">
+            <div>
                 <!-- MENÚ IZQUIERDA DE CATEGORIAS -->
                 <h3>Categorías</h3>
                 <ul class="nav flex-column">
                     @foreach ($categorias as $categoria)
                         <li class="nav-item">
                             <a class="nav-link"
-                                href="{{ route('categorias.show', $categoria->nombre_categoria) }}">{{ $categoria->nombre_categoria }}</a>
+                                href="{{ route('categorias.edit', $categoria->nombre_categoria) }}">{{ $categoria->nombre_categoria }}</a>
+
                             <!-- Agregar desplegable de productos -->
                             <ul class="submenu">
                                 @foreach ($categoria->productos as $producto)

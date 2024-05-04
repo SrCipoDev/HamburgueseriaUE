@@ -2,6 +2,7 @@
 @section('title, Hamburgueseria UE')
 
 @section('content')
+
     <!-- MENU -->
     <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix">
 
@@ -26,7 +27,7 @@
             </ul>
 
             <!--LOGO HAMBURGUESERIA-->
-            <a class="navbar-brand m-auto" href="#home">
+            <a class="navbar-brand m-auto" href="{{ route('index') }}#home">
                 <!--<img style="width: 10em;" src="img/Logo-Hamburgueseria UE2.png" class="brand-img" alt="logo de nuestra hamburgueseria galicia">-->
                 <span class="brand-txt">Hamburguesaria UE</span>
             </a>
@@ -46,8 +47,8 @@
         </div>
     </nav>
 
-
-
+    <div class="container contenido-principal">
+    </div>
     <hr>
     <p style="padding-top:100px;"></p>
 @endsection()

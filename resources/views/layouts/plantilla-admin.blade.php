@@ -14,6 +14,7 @@
 
     <!-- ESTILO PRINCIPAL DE LA WEB PUBLICA --->
     <link rel="stylesheet" href="{{ asset('css/style_principal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carta.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
@@ -29,11 +30,12 @@
         <div class="row">
             <div class="col-sm-3">
                 <h3>Email</h3>
-                <P class="text-muted">info@hamburgueseriagalicia.es</P>
+                <P class="text-muted"><a href="mailto:info@hamburgueseriagalicia.es">info@hamburgueseriagalicia.es</a>
+                </P>
             </div>
             <div class="col-sm-3">
                 <h3>Teléfono</h3>
-                <P class="text-muted"> 917 40 72 72 </P>
+                <P class="text-muted"><a href="tel:917407272">917 40 72 72</a></P>
             </div>
             <div class="col-sm-3">
                 <h3>Visitanos en...</h3>
