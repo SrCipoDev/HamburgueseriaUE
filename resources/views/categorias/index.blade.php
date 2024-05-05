@@ -1,4 +1,4 @@
-@extends('layouts.plantilla')
+@extends('layouts.plantilla-admin')
 
 @section('title', 'Hamburgueseria UE')
 

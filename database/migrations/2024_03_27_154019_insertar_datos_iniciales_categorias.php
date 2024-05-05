@@ -37,6 +37,6 @@ class InsertarDatosInicialesCategorias extends Migration
      */
     public function down()
     {
-        DB::table('categorias')->whereIn('id_categoria', [1, 2, 3, 4, 5])->delete();
+        DB::table('categorias')->whereIn('id_categoria', [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14])->delete();
     }
 }

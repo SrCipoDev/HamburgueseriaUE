@@ -3,7 +3,7 @@
 @section('content')
 @section('title', 'Hamburgueseria UE - Registro')
 
-<div class="row justify-content-center mt-5">
+<div class="row justify-content-center mt-5 container">
     <div class="col-md-8">
 
         <div class="card">

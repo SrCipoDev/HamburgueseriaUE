@@ -15,7 +15,7 @@
 * {
     margin:0px;
     padding: 0px;
-    box-sizing: inherit;
+    /*box-sizing: inherit;*/
     text-decoration: none;
 }
 
@@ -33,6 +33,7 @@ body {
 a {
     text-decoration: none;
     color: var(--light-gray);
+    background-color: #d30d34;
 }
 
 a:hover {
@@ -65,11 +66,6 @@ hr {
     z-index: 1030;
 }
 
-/*MENÚ PRINCIPAL -- ELEMENTOS*/
-.nav-link {
-    font-weight: 500;
-    color:white;
-}
 
 /*MENU PRINCIPAL -- BOTONES (INICIO + REGISTRO)*/
 .button {
@@ -85,6 +81,16 @@ hr {
     color: var(--white);;
     border-color: var(--black);
 }
+
+
+/* nav-link */
+.nav-link {
+    font-weight: 500;
+    color:white;
+    text-decoration: none;
+}
+
+
 
 
 
@@ -128,4 +134,9 @@ hr {
 #about .col-md-6 img {
     max-width: 100%; /* Limita el ancho de la imagen al 50% del contenedor */
     height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/*SECTION ABOUT*/
+.about {
+    
 }
