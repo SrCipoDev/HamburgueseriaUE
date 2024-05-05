@@ -34,6 +34,7 @@ Route::controller(CategoriaController::class)->group(function () {
    Route::post('categorias',                          'storage')->name('categorias.storage');
    Route::get('categorias/{nombre_categoria}/edit',   'edit')->name('categorias.edit');
    Route::put('categorias/{nombre_categoria}',        'update')->name('categorias.update');
+   Route::delete('categorias/{nombre_categoria}',     'destroy')->name('categoria.destroy');
 });
 
 // RUTAS PARA LAS VISTAS DE INGREDIENTES

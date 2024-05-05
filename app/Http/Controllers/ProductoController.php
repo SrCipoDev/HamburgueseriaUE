@@ -64,4 +64,14 @@ class ProductoController extends Controller
         $producto->save();
         return redirect()->route('productos.show', ['nombre_producto' => $producto->nombre_producto]);
     }
+
+    // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP
+    public function __invoke()
+    {
+        // Obtener las categorías que se mostrarán en la carta
+        $productos = Producto::all();
+
+        // Pasar las categorías a la vista
+        return view('carta', compact('categorias'));
+    } // FIN  DE LA VISTA CARTA
 }
