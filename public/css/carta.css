@@ -1,0 +1,53 @@
+.contenido-principal {
+    width: 100%;
+    padding-top: 4em;
+    color: white;
+    margin: 5em;
+}
+
+/* CAMPOS DEL LOS CUADROS DE FORMULARIO */
+.card {
+    color:black;
+}
+
+.card-body {
+    padding: 3em;
+    margin: 15px;
+}
+
+/* EDITAR PAGINA EDIT CATEGORIAS*/
+.formulario {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    margin-left: 20px;
+}
+
+textarea .formulario {
+    height: 150px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+textarea {
+    align-content: center;
+}
+
+.text {
+    align-items: center;
+    align-content: center;
+}
+
+.mb-3 {
+    width: 100%;
+
+}
+
+
+
+/*.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+    background-color: red;
+}*/

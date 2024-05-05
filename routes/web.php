@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\CartaController;          /*AÑADIDO POR NEREA PARA MOSTRAR ARCHIVO carta.blade.php*/
+use App\Http\Controllers\CartaController;
 
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\IngredienteController;
@@ -58,12 +58,12 @@ Route::controller(LoginRegisterController::class)->group(function () {
 
 // RUTAS PARA LAS VISTAS DE PRODUCTOS
 Route::controller(ProductoController::class)->group(function () {
-   Route::get('producto',                           'index')->name('producto.index');
-   Route::get('producto/create',                    'create')->name('producto.create');
-   Route::get('producto/{nombre_producto}',        'show')->name('producto.show');
-   Route::post('producto',                          'storage')->name('producto.storage');
-   Route::get('producto/{nombre_producto}/edit',   'edit')->name('producto.edit');
-   Route::put('producto/{nombre_producto}',        'update')->name('producto.update');
+   Route::get('productos',                           'index')->name('productos.index');
+   Route::get('productos/create',                    'create')->name('productos.create');
+   Route::get('productos/{nombre_producto}',        'show')->name('productos.show');
+   Route::post('productos',                          'storage')->name('productos.storage');
+   Route::get('productos/{nombre_producto}/edit',   'edit')->name('productos.edit');
+   Route::put('productos/{nombre_producto}',        'update')->name('productos.update');
 });
 
 // RUTA PARA LA PAGINA DE ADMINISTRACION 

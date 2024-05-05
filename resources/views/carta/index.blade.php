@@ -1,17 +1,15 @@
 <!-- Menú de Categorías -->
-<div class="col-md-3">
-    <h3>MOD</h3>
-
-    <h3>Hamburgueseria UE</h3>
-    <ul>
-        @foreach ($categorias as $categoria)
-            <li>{{ $categoria->nombre }}</li>
-        @endforeach
-    </ul>
-
-</div>
-
-<!-- Productos de la Categoría Seleccionada -->
-<div class="col-md-9">
-    <!-- Aquí puedes mostrar los productos de la categoría seleccionada -->
-</div>
+<ul>
+    @foreach ($categorias as $categoria)
+        <li>
+            <a href="{{ route('categorias.show', $categoria->nombre_categoria) }}">{{ $categoria->nombre_categoria }}</a>
+            @if ($categoria->productos->count() > 0)
+                <ul>
+                    @foreach ($categoria->productos as $producto)
+                        <li>{{ $producto->nombre_producto }}</li>
+                    @endforeach
+                </ul>
+            @endif
+        </li>
+    @endforeach
+</ul>

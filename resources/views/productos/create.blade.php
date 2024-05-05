@@ -1,6 +1,6 @@
-@extends('layouts.plantilla')
+@extends('layouts.plantilla-admin')
 
-@section('title', 'Productos create')
+@section('title', 'Hamburguesería UE - Crear Producto')
 
 @section('content')
     <h1>Bienvenido a la creacion de Productos</h1>

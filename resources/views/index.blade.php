@@ -61,9 +61,10 @@
                         <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
                     </div>
                 </div>
+
                 <!--SEGUNDA IMG SLIDER-->
                 <div class="carousel-item">
-                    <img class="d-block slider-img w-100" src="img/Hamburguesa_slider_5.jpg" alt="Second slide">
+                    <img class="d-block slider-img w-100" src="img/Hamburguesa_slider_7.jpg" alt="Second slide">
                     <div class="carousel-caption">
                         <h1 class="">Hamburgueseria UE</h1>
                         <br>
@@ -71,32 +72,32 @@
                         <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
                     </div>
                 </div>
-                <!--TERCERA IMG SLIDER-->
-                <div class="carousel-item">
-                    <img class="d-block slider-img w-100" src="img/tiramisu.jpg" alt="Third slide">
-                    <div class="carousel-caption">
-                        <h1 class="">Hamburgueseria UE</h1>
-                        <br>
-                        <h2 class="">Pide &amp; Disfruta</h2>
-                        <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
-                    </div>
-                </div>
+                <!--TERCERA IMG SLIDER--><!--
+                                                <div class="carousel-item">
+                                                    <img class="d-block slider-img w-100" src="img/tiramisu2.jpg" alt="Third slide">
+                                                    <div class="carousel-caption">
+                                                        <h1 class="">Hamburgueseria UE</h1>
+                                                        <br>
+                                                        <h2 class="">Pide &amp; Disfruta</h2>
+                                                        <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
+                                                    </div>
+                                                </div>
+                                            </div>-->
+                <!--BOTONES ANTERIOR SLIDER-->
+                <a class="carousel-control-prev" href="#sliderHome" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <!--BOTONES SIGUIENTE SLIDER-->
+                <a class="carousel-control-next" href="#sliderHome" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
             </div>
-            <!--BOTONES ANTERIOR SLIDER-->
-            <a class="carousel-control-prev" href="#sliderHome" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <!--BOTONES SIGUIENTE SLIDER-->
-            <a class="carousel-control-next" href="#sliderHome" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
-        </div>
     </header>
 
     <!--  SOBRE NOSOTROS  -->
-    <div id="about" class="container-fluid wow fadeIn background-white" data-wow-duration="1.5s">
+    <div id="about" class="container-fluid wow fadeIn background-white about" data-wow-duration="1.5s">
         <div class="row">
             <!-- COLUMNA DE LA IZQUIERDA CON LA IMAGEN-->
             <div class="col-md-6">
@@ -104,7 +105,7 @@
             </div>
             <!-- COLUMNA DE LA CERECHA CON EL TEXTO-->
             <div class="col-md-6 p-0">
-                <div class="p-5">
+                <div class="p-5" section-about>
                     <div class="col-sm-8 py-5 my-5">
                         <h2 class="mb-4">Sobre Nosotros</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, quisquam accusantium
@@ -114,14 +115,7 @@
                             harum, <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum necessitatibus
                             iste,
                             nulla recusandae porro minus nemo eaque cum repudiandae quidem voluptate magnam voluptatum?
-                            <br>Nobis, saepe sapiente omnis qui eligendi pariatur. quis voluptas. Assumenda facere adipisci
-                            quaerat. Illum doloremque quae omnis vitae.
                         </p>
-                        <p><b>Lonsectetur adipisicing elit. Blanditiis aspernatur, ratione dolore vero asperiores
-                                explicabo.</b></p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ab itaque modi, reprehenderit fugit
-                            soluta, molestias optio repellat incidunt iure sed deserunt nemo magnam rem explicabo vitae.
-                            Cum, nostrum, quidem.</p>
                     </div>
                 </div>
             </div>
@@ -263,7 +257,8 @@
     </div>
     <hr>
     <!-- RESEÑAS  -->
-    <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
+    <div id="testmonial"
+        class="background-white container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
         <h2 class="section-title my-5 text-center">RESEÑAS DE NUESTROS CLIENTES</h2>
         <div class="row mt-3 mb-5">
             <div class="col-md-4 my-3 my-md-0">
