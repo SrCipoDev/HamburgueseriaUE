@@ -17,10 +17,9 @@
                             {{-- es el token, seguridad de laravel --}}
                             <div class="mb-3 row">
                                 <label class="col-md-4 col-form-label text-md-end text-start"><span class="text">Nombre de
-                                        la
-                                        Categoría:</label>
+                                        la Categoría:</label>
                                 <div class="col-md-6 mb-3">
-                                    <input type="text" name="nombre_categoria" class="formulario"
+                                    <input class="formulario" type="text" name="nombre_categoria"
                                         value="{{ old('nombre_categoria', $categoria->nombre_categoria) }}">
                                     @error('nombre_categoria')
                                         {{ $message }}
@@ -51,6 +50,13 @@
                 </div>
                 <div>
                     <a class="nav-link" href="{{ route('categorias.create') }}">Crear categorías</a>
+                </div>
+                <div>
+                    <form action="{{ route('categorias.destroy', $categoria) }}" method="POST">
+                        @csrf
+                        @method('delete')
+                        <button type="submit" class=" button nav-link col-md-3 nav-link button">Eliminar</button>
+                    </form>
                 </div>
             </div>
         </div>

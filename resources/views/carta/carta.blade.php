@@ -13,7 +13,7 @@
                             <a class="nav-link" href="{{ route('categorias.show', $categoria->nombre_categoria) }}">
                                 {{ $categoria->nombre_categoria }}
                             </a>
-
+                            <!-- ANGEL //  LOS PRODUCTOS NO RECOGEN LA VARIABLE -->
                             <ul class="text-center navbar-nav">
                                 @foreach ($categoria->productos as $producto)
                                     <li class="nav-item">

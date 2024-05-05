@@ -73,16 +73,16 @@
                     </div>
                 </div>
                 <!--TERCERA IMG SLIDER--><!--
-                                                <div class="carousel-item">
-                                                    <img class="d-block slider-img w-100" src="img/tiramisu2.jpg" alt="Third slide">
-                                                    <div class="carousel-caption">
-                                                        <h1 class="">Hamburgueseria UE</h1>
-                                                        <br>
-                                                        <h2 class="">Pide &amp; Disfruta</h2>
-                                                        <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
+                                                    <div class="carousel-item">
+                                                        <img class="d-block slider-img w-100" src="img/tiramisu2.jpg" alt="Third slide">
+                                                        <div class="carousel-caption">
+                                                            <h1 class="">Hamburgueseria UE</h1>
+                                                            <br>
+                                                            <h2 class="">Pide &amp; Disfruta</h2>
+                                                            <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
+                                                        </div>
                                                     </div>
-                                                </div>
-                                            </div>-->
+                                                </div>-->
                 <!--BOTONES ANTERIOR SLIDER-->
                 <a class="carousel-control-prev" href="#sliderHome" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -256,43 +256,43 @@
     </div>
     </div>
     <hr>
-    <!-- RESEÑAS  -->
-    <div id="testmonial"
-        class="background-white container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
-        <h2 class="section-title my-5 text-center">RESEÑAS DE NUESTROS CLIENTES</h2>
-        <div class="row mt-3 mb-5">
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <h3 class="testmonial-title">Nerea Santos</h3>
-                    <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
-                    <div class="testmonial-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nobis eligendi, quaerat accusamus
-                            ipsum sequi dignissimos consequuntur blanditiis natus. Aperiam!</p>
+    <!-- RESEÑAS
+        <div id="testmonial"
+            class="background-white container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
+            <h2 class="section-title my-5 text-center">RESEÑAS DE NUESTROS CLIENTES</h2>
+            <div class="row mt-3 mb-5">
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <h3 class="testmonial-title">Nerea Santos</h3>
+                        <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
+                        <div class="testmonial-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nobis eligendi, quaerat accusamus
+                                ipsum sequi dignissimos consequuntur blanditiis natus. Aperiam!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <h3 class="testmonial-title">Angel Espino</h3>
+                        <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
+                        <div class="testmonial-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum minus obcaecati cum eligendi
+                                perferendis magni dolorum ipsum magnam, sunt reiciendis natus. Aperiam!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <h3 class="testmonial-title">Angel Nerea</h3>
+                        <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
+                        <div class="testmonial-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, nam. Earum nobis eligendi,
+                                dignissimos consequuntur blanditiis natus. Aperiam!</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <h3 class="testmonial-title">Angel Espino</h3>
-                    <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
-                    <div class="testmonial-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum minus obcaecati cum eligendi
-                            perferendis magni dolorum ipsum magnam, sunt reiciendis natus. Aperiam!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <h3 class="testmonial-title">Angel Nerea</h3>
-                    <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
-                    <div class="testmonial-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, nam. Earum nobis eligendi,
-                            dignissimos consequuntur blanditiis natus. Aperiam!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </div> -->
     <hr>
     <!-- CONTACTO  -->
     <div id="contacto" class="container-fluid bg-dark text-light border-top wow fadeIn">
