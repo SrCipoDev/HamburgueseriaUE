@@ -1,6 +1,6 @@
 @extends('layouts.plantilla-admin')
 
-@section('title', 'Hamburgueseria UE - Crear Categorías')
+@section('title', 'Hamburguesería UE - Crear Categorías')
 
 @section('content')
     <div class="container contenido-principal">
