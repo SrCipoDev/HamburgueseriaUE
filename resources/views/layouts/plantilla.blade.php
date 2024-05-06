@@ -1,57 +1,118 @@
 <!DOCTYPE html>
 <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Hamburguesería UE es un proyecto de final de curso o TFG, desarrollado para mostrar los conocimientos absorvidos durante el curso. ">
-        <meta name="author" content="Nerea Santos, Ángel Espinosa, Mariam Blanco">
-        <title>@yield('title', 'Hamburgueseria UE')</title>    
 
-        <!-- ESTILO PRINCIPAL DE LA WEB PUBLICA --->
-        <link rel="stylesheet" href="{{ asset('css/style_principal.css') }}">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
-        <!--LINEAS AÑADIDAS POR MARIAM O ANGEL --> 
-        <!--{{--     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> --}} 
-        {{-- Es para los estilos de tailwind, o habría que hacerlo con bootstrap --}}
--->
-    </head>
 
-    <body id="home" data-spy="scroll">
-        <a href="{{route('index')}}">Página principal</a>
-        
-        @yield('content')
+    <meta name="description"
+        content="Hamburguesería UE es un proyecto de final de curso o TFG, desarrollado para mostrar los conocimientos absorvidos durante el curso. ">
+    <meta name="author" content="Nerea Santos y Ángel Espinosa">
+    <title>@yield('title', 'Hamburgueseria UE')</title>
 
-        <!-- PIE DE PAGINA  -->
-        <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
-            <div class="row">
-                <div class="col-sm-5">
-                    <h3>Email</h3>
-                    <P class="text-muted">info@hamburgueseriagalicia.es</P>
-                </div>
-                <div class="col-sm-5">
-                    <h3>Teléfono</h3>
-                    <P class="text-muted"> 917 40 72 72 </P>
-                </div>
-                <div class="col-sm-5">
-                    <h3>Visitanos en...</h3>
-                    <P class="text-muted"> C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid </P>
-                </div>
-                <div class="col-sm-5">
-                    <h3><a class="button" href="administrador.html">Acceso Administrador</h3></a>
-                </div>
+    <!-- FAVICON -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
+    <!-- ESTILO PRINCIPAL DE LA WEB PUBLICA --->
+    <link rel="stylesheet" href="{{ asset('css/style_principal.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/carta.css') }}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+
+</head>
+
+<body id="home" data-spy="scroll">
+
+    @yield('content')
+
+    <!-- MENU -->
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix">
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <!--navbar-button button-->
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse">
+            <!--MENU LATERAL IZQ-->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('index') }}#home">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('index') }}#about">Sobre Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('index') }}#menu">Nuestra Carta</a>
+                </li>
+            </ul>
+
+            <!--LOGO HAMBURGUESERIA-->
+            <a class="navbar-brand m-auto" href="{{ route('index') }}#home">
+                <!--<img style="width: 10em;" src="img/Logo-Hamburgueseria UE2.png" class="brand-img" alt="logo de nuestra hamburgueseria galicia">-->
+                <span class="brand-txt">Hamburguesaria UE</span>
+            </a>
+
+            <!--MENU LATERAL DRCH-->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#contacto">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button" href="{{ route('login') }}">Inicio Sesión</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link button" href="{{ route('register') }}">Registrate</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    <!-- PIE DE PAGINA  -->
+    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+        <div class="row">
+            <div class="col-sm-5">
+                <h3>Email</h3>
+                <P class="text-muted"><a href="mailto:info@hamburgueseriagalicia.es">info@hamburgueseriagalicia.es</a>
+                </P>
+            </div>
+            <div class="col-sm-5">
+                <h3>Teléfono</h3>
+                <P class="text-muted"> <a href="tel:917407272">917 40 72 72</a></P>
+            </div>
+            <div class="col-sm-5">
+                <h3>Visitanos en...</h3>
+                <P class="text-muted"> C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid </P>
+            </div>
+            <div class="col-sm-5">
+                <p><a class="button" href="{{ route('admin.index') }}">Acceso Administrador</p></a>
             </div>
         </div>
-        <!-- BARRA DERECHOS RESERVADOS --> 
-        <div class="bg-dark text-light text-center border-top wow fadeIn">
-            <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> By <a href="">Nerea Santos, Angel Espino y Mariam Blanco</a></p>
-        </div>
+    </div>
+    <!-- BARRA DERECHOS RESERVADOS -->
+    <div class="bg-dark text-light text-center border-top wow fadeIn">
+        <p class="mb-0 py-3 text-muted small">&copy; Copyright
+            <script>
+                document.write(new Date().getFullYear())
+            </script> By <a href="">Nerea Santos y Angel Espino</a>
+        </p>
+    </div>
 
-        <!-- BOOTSTRAP  -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+    <!-- BOOTSTRAP  -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-    </body>
+
+</body>
+
 </html>

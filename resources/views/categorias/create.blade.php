@@ -1,33 +1,46 @@
-@extends('layouts.plantilla')
+@extends('layouts.plantilla-admin')
 
-@section('title','Categorias create')
+@section('title', 'Hamburguesería UE - Crear Categorías')
 
 @section('content')
-    <h1>Bienvenido a la creacion de categorias</h1>
-    <a href="{{route('categorias.index')}}">Volver a las categorías</a>
-    <form action="{{route('categorias.storage')}}" method="POST">
-
-        @csrf
-        {{-- es el token, seguridad de laravel --}}
-        <br>
-        <label>nombre_categoria:
-            <input type="text" name="nombre_categoria" value="{{old('nombre_categoria')}}">
-        </label>
-
-        @error('nombre_categoria')
-            {{$message}}
-        @enderror
-
-        <br>
-        <label>descripcion_categoria:
-            <textarea name="descripcion_categoria" rows = 4 >{{old('descripcion_categoria')}}</textarea>
-        </label>
-
-        @error('descripcion_categoria')
-            {{$message}}
-        @enderror
-
-        <br>
-        <button type="submit">Enviar formulario</button>
-    </form>
+    <div class="container contenido-principal">
+        <div class="row">
+            <div>
+                <h1>Creacion de las categorías</h1>
+                <br>
+                <section class="card">
+                    <div class="card-header">Creación de una nueva categoría</div>
+                    <div class="card-body">
+                        <form action="{{ route('categorias.storage') }}" method="POST">
+                            @csrf
+                            <div class="mb-3 row">
+                                <label class="col-md-4 col-form-label text-md-end text-start">Nombre de la Categoría:</label>
+                                <div class="col-md-6 mb-3">
+                                    <input class="formulario" type="text" name="nombre_categoria"
+                                        value="{{ old('nombre_categoria') }}">
+                                    @error('nombre_categoria')
+                                        {{ $message }}
+                                    @enderror
+                                    <br>
+                                </div>
+                                <label class="col-md-4 col-form-label text-md-end text-start">Descripción de la
+                                    Categoría:</label>
+                                <div class="col-md-6 mb-3">
+                                    <textarea name="descripcion_categoria" rows=4 class="formulario">{{ old('descripcion_categoria') }}</textarea>
+                                    @error('descripcion_categoria')
+                                        {{ $message }}
+                                    @enderror
+                                    <br>
+                                </div>
+                                <br>
+                                <div class="mb-3">
+                                    <button type="submit button nav-link col-md-3 nav-link button">Crear Categoría</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
 @endsection

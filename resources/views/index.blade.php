@@ -37,10 +37,10 @@
                     <a class="nav-link" href="#contacto">Contacto</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" href="/login">Inicio Sesión</a>
+                    <a class="nav-link button" href="{{ route('login') }}">Inicio Sesión</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link button" href="/register">Registrate</a>
+                    <a class="nav-link button" href="{{ route('register') }}">Registrate</a>
                 </li>
             </ul>
         </div>
@@ -56,52 +56,56 @@
                     <img class="d-block slider-img w-100" src="img/img-slider-3.jpg" alt="First slide">
                     <div class="carousel-caption">
                         <h1 class="">Hamburgueseria UE</h1>
+                        <br>
                         <h2 class="">Pide &amp; Disfruta</h2>
                         <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
                     </div>
                 </div>
+
                 <!--SEGUNDA IMG SLIDER-->
                 <div class="carousel-item">
-                    <img class="d-block slider-img w-100" src="../img/Hamburguesa_slider_5.jpg" alt="Second slide">
+                    <img class="d-block slider-img w-100" src="img/Hamburguesa_slider_7.jpg" alt="Second slide">
                     <div class="carousel-caption">
                         <h1 class="">Hamburgueseria UE</h1>
+                        <br>
                         <h2 class="">Pide &amp; Disfruta</h2>
                         <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
                     </div>
                 </div>
-                <!--TERCERA IMG SLIDER-->
-                <div class="carousel-item">
-                    <img class="d-block slider-img w-100" src="../img/tiramisu.jpg" alt="Third slide">
-                    <div class="carousel-caption">
-                        <h1 class="">Hamburgueseria UE</h1>
-                        <h2 class="">Pide &amp; Disfruta</h2>
-                        <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
-                    </div>
-                </div>
+                <!--TERCERA IMG SLIDER--><!--
+                                                    <div class="carousel-item">
+                                                        <img class="d-block slider-img w-100" src="img/tiramisu2.jpg" alt="Third slide">
+                                                        <div class="carousel-caption">
+                                                            <h1 class="">Hamburgueseria UE</h1>
+                                                            <br>
+                                                            <h2 class="">Pide &amp; Disfruta</h2>
+                                                            <a class="slider-button button" href="{{ route('carta.index') }}">Realiza tu pedido</a>
+                                                        </div>
+                                                    </div>
+                                                </div>-->
+                <!--BOTONES ANTERIOR SLIDER-->
+                <a class="carousel-control-prev" href="#sliderHome" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <!--BOTONES SIGUIENTE SLIDER-->
+                <a class="carousel-control-next" href="#sliderHome" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
             </div>
-            <!--BOTONES ANTERIOR SLIDER-->
-            <a class="carousel-control-prev" href="#sliderHome" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Anterior</span>
-            </a>
-            <!--BOTONES SIGUIENTE SLIDER-->
-            <a class="carousel-control-next" href="#sliderHome" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Siguiente</span>
-            </a>
-        </div>
     </header>
 
     <!--  SOBRE NOSOTROS  -->
-    <div id="about" class="container-fluid wow fadeIn background-white" data-wow-duration="1.5s">
+    <div id="about" class="container-fluid wow fadeIn background-white about" data-wow-duration="1.5s">
         <div class="row">
             <!-- COLUMNA DE LA IZQUIERDA CON LA IMAGEN-->
             <div class="col-md-6">
-                <img class="img-fluid w-100" src="../img/Hamburguesa_fondo_blanco.jpg" alt="" />
+                <img class="img-fluid w-100" src="img/Hamburguesa_fondo_blanco.jpg" alt="" />
             </div>
             <!-- COLUMNA DE LA CERECHA CON EL TEXTO-->
             <div class="col-md-6 p-0">
-                <div class="p-5">
+                <div class="p-5" section-about>
                     <div class="col-sm-8 py-5 my-5">
                         <h2 class="mb-4">Sobre Nosotros</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, quisquam accusantium
@@ -111,14 +115,7 @@
                             harum, <br><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum necessitatibus
                             iste,
                             nulla recusandae porro minus nemo eaque cum repudiandae quidem voluptate magnam voluptatum?
-                            <br>Nobis, saepe sapiente omnis qui eligendi pariatur. quis voluptas. Assumenda facere adipisci
-                            quaerat. Illum doloremque quae omnis vitae.
                         </p>
-                        <p><b>Lonsectetur adipisicing elit. Blanditiis aspernatur, ratione dolore vero asperiores
-                                explicabo.</b></p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos ab itaque modi, reprehenderit fugit
-                            soluta, molestias optio repellat incidunt iure sed deserunt nemo magnam rem explicabo vitae.
-                            Cum, nostrum, quidem.</p>
                     </div>
                 </div>
             </div>
@@ -169,7 +166,7 @@
                     <div class="col-md-4">
                         <div class="card bg-transparent border my-3 my-md-0">
                             <a href="" alt="">
-                                <img src="../img/hamburgers-with-beef.jpg" alt=""
+                                <img src="img/hamburgers-with-beef.jpg" alt=""
                                     class="rounded-0 card-img-top mg-responsive">
                                 <div class="card-body">
                                     <h4 class="pt20 pb20"> Hamburguesas de Ternera </h4> <!--AÑADIR ROUTE--> -->
@@ -184,7 +181,7 @@
                 <div class="col-md-4">
                     <div class="card bg-transparent border my-3 my-md-0">
                         <a href="" alt="">
-                            <img src="../img/" alt="" class="rounded-0 card-img-top mg-responsive">
+                            <img src="img/" alt="" class="rounded-0 card-img-top mg-responsive">
                             <div class="card-body">
                                 <h4 class="pt20 pb20"> Hamburguesas de Pollo </h4>
                                 <p class="text-white"> Descubre nuestra deliciosa selección de Hamburguesas Gourmet de
@@ -198,7 +195,7 @@
             <div class="col-md-4">
                 <div class="card bg-transparent border my-3 my-md-0">
                     <a href="" alt="">
-                        <img src="../img/blog-3.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
+                        <img src="img/blog-3.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
                         <div class="card-body">
                             <h4 class="pt20 pb20"> Hamburguesas Vegetales </h4>
                             <p class="text-white"> Explora nuestra variedad de Hamburguesas Gourmet Vegetales, elaboradas
@@ -218,7 +215,7 @@
             <!-- BOCADILLOS VEGETALES-->
             <div class="col-md-4 my-3 my-md-0">
                 <div class="card bg-transparent border">
-                    <img src="../img/blog-4.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
+                    <img src="img/blog-4.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
                     <div class="card-body">
                         <h4 class="pt20 pb20">Bocadillos Vegetales</h4>
                         <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident
@@ -229,7 +226,7 @@
             <!-- BOCADILLOS DE POLLO-->
             <div class="col-md-4 my-3 my-md-0">
                 <div class="card bg-transparent border">
-                    <img src="../img/food-5981258_1280.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
+                    <img src="img/food-5981258_1280.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
                     <div class="card-body">
                         <h4 class="pt20 pb20">Bocadillos de Pollo</h4>
                         <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident
@@ -240,7 +237,7 @@
             <!-- BOCADILLOS ESPECIALES-->
             <div class="col-md-4 my-3 my-md-0">
                 <div class="card bg-transparent border">
-                    <img src="../img/blog-6.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
+                    <img src="img/blog-6.jpg" alt="" class="rounded-0 card-img-top mg-responsive">
                     <div class="card-body">
                         <h4 class="pt20 pb20">Bocadillos especiales</h4>
                         <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa provident
@@ -259,42 +256,43 @@
     </div>
     </div>
     <hr>
-    <!-- RESEÑAS  -->
-    <div id="testmonial" class="container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
-        <h2 class="section-title my-5 text-center">RESEÑAS DE NUESTROS CLIENTES</h2>
-        <div class="row mt-3 mb-5">
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <h3 class="testmonial-title">Nerea Santos</h3>
-                    <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
-                    <div class="testmonial-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nobis eligendi, quaerat accusamus
-                            ipsum sequi dignissimos consequuntur blanditiis natus. Aperiam!</p>
+    <!-- RESEÑAS
+        <div id="testmonial"
+            class="background-white container-fluid wow fadeIn bg-dark text-light has-height-lg middle-items">
+            <h2 class="section-title my-5 text-center">RESEÑAS DE NUESTROS CLIENTES</h2>
+            <div class="row mt-3 mb-5">
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <h3 class="testmonial-title">Nerea Santos</h3>
+                        <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
+                        <div class="testmonial-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum nobis eligendi, quaerat accusamus
+                                ipsum sequi dignissimos consequuntur blanditiis natus. Aperiam!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <h3 class="testmonial-title">Angel Espino</h3>
+                        <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
+                        <div class="testmonial-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum minus obcaecati cum eligendi
+                                perferendis magni dolorum ipsum magnam, sunt reiciendis natus. Aperiam!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 my-3 my-md-0">
+                    <div class="testmonial-card">
+                        <h3 class="testmonial-title">Angel Nerea</h3>
+                        <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
+                        <div class="testmonial-body">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, nam. Earum nobis eligendi,
+                                dignissimos consequuntur blanditiis natus. Aperiam!</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <h3 class="testmonial-title">Angel Espino</h3>
-                    <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
-                    <div class="testmonial-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum minus obcaecati cum eligendi
-                            perferendis magni dolorum ipsum magnam, sunt reiciendis natus. Aperiam!</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 my-3 my-md-0">
-                <div class="testmonial-card">
-                    <h3 class="testmonial-title">Mariam Blanco</h3>
-                    <h6 class="testmonial-subtitle">Pedido a domicilio</h6>
-                    <div class="testmonial-body">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, nam. Earum nobis eligendi,
-                            dignissimos consequuntur blanditiis natus. Aperiam!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+        </div> -->
     <hr>
     <!-- CONTACTO  -->
     <div id="contacto" class="container-fluid bg-dark text-light border-top wow fadeIn">

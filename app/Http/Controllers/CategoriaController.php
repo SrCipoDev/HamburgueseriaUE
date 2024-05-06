@@ -10,23 +10,10 @@ class CategoriaController extends Controller
 {
     public function index()
     {
-        $categorias = Categoria::paginate(4);
+        $categorias = Categoria::all();
         //Cuantas categorías se muestran por página
-
         return view('categorias.index', compact('categorias'));
     }
-
-    // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP
-    public function __invoke()
-    {
-        // Obtener las categorías que se mostrarán en la carta
-        $categorias = Categoria::paginate(4);
-
-        // Pasar las categorías a la vista
-        return view('carta', compact('categorias'));
-    } // FIN  DE LA VISTA CARTA
-
-    /*------------------------------*/
 
     public function create()
     {
@@ -56,7 +43,6 @@ class CategoriaController extends Controller
     {
         $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();
         //Al estar utilizando el nombre para las urls en lugar del id, hay que ponerlo así
-
         return view('categorias.show', compact('categoria'));
     }
 
@@ -80,4 +66,21 @@ class CategoriaController extends Controller
         $categoria->save();
         return redirect()->route('categorias.show', ['nombre_categoria' => $categoria->nombre_categoria]);
     }
+
+    public function destroy(Categoria $categoria)
+    {
+        $categoria->delete();
+        return redirect()->route('categorias.index');
+    }
+
+    // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP
+    public function __invoke()
+    {
+        // Obtener las categorías que se mostrarán en la carta
+        $categorias = Categoria::all();
+
+        // Pasar las categorías a la vista
+        return view('carta', compact('categorias'));
+    } // FIN  DE LA VISTA CARTA
+
 }
