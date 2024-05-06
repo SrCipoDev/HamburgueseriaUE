@@ -28,6 +28,6 @@
         @enderror
 
         <br>
-        <button type="submit">Enviar formulario</button>
+        <button type="submit">Enviar</button>
     </form>
 @endsection

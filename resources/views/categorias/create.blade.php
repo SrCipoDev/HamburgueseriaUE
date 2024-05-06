@@ -23,8 +23,7 @@
                                     @enderror
                                     <br>
                                 </div>
-                                <label class="col-md-4 col-form-label text-md-end text-start">Descripción de la
-                                    Categoría:</label>
+                                <label class="col-md-4 col-form-label text-md-end text-start">Descripción de la Categoría:</label>
                                 <div class="col-md-6 mb-3">
                                     <textarea name="descripcion_categoria" rows=4 class="formulario">{{ old('descripcion_categoria') }}</textarea>
                                     @error('descripcion_categoria')

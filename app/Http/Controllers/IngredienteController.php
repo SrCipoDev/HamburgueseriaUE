@@ -66,4 +66,11 @@ class IngredienteController extends Controller
         $ingrediente->save();
         return redirect()->route('ingredientes.show', ['nombre_ingrediente' => $ingrediente->nombre_ingrediente]);
     }
+    public function destroy($nombre_ingrediente)
+    {
+        $ingrediente = Ingrediente::where('nombre_ingrediente', $nombre_ingrediente)->first();
+        $ingrediente->delete();
+        return redirect()->route('ingredientes.index')
+                        ->withSuccess('Ingrediente eliminado exitosamente.');
+    }
 }

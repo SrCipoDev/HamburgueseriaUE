@@ -4,7 +4,7 @@
 
 @section('content')
     <h1>Bienvenido al indice de Ingredientes</h1>
-    <a href="{{ route('ingredientes.create') }}">Crear ingredienteeeeeeee</a>
+{{--     <a href="{{ route('ingredientes.create') }}">Crear ingrediente</a> --}}
     <ul>
         @foreach ($ingredientes as $ingrediente)
             <li><a

@@ -67,10 +67,12 @@ class CategoriaController extends Controller
         return redirect()->route('categorias.show', ['nombre_categoria' => $categoria->nombre_categoria]);
     }
 
-    public function destroy(Categoria $categoria)
+    public function destroy($nombre_categoria)
     {
+        $categoria = Categoria::where('nombre_categoria', $nombre_categoria)->first();
         $categoria->delete();
-        return redirect()->route('categorias.index');
+        return redirect()->route('categorias.index')
+                        ->withSuccess('Categoría eliminada exitosamente.');
     }
 
     // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP
