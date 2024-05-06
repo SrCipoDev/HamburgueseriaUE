@@ -52,10 +52,10 @@
                     <a class="nav-link" href="{{ route('categorias.create') }}">Crear categorías</a>
                 </div>
                 <div>
-                    <form action="{{ route('categorias.destroy', $categoria) }}" method="POST">
+                    <form action="{{ route('categorias.destroy', $categoria->nombre_categoria) }}" method="POST">
                         @csrf
                         @method('delete')
-                        <button type="submit" class=" button nav-link col-md-3 nav-link button">Eliminar</button>
+                        <button type="submit">Eliminar</button>
                     </form>
                 </div>
             </div>

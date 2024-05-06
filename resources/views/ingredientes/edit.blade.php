@@ -27,4 +27,9 @@
         <br>
         <button type="submit">Editar ingrediente</button>
     </form>
+    <form action="{{ route('ingredientes.destroy', $ingrediente->nombre_ingrediente) }}" method="POST">
+        @csrf
+        @method('delete')
+        <button type="submit">Eliminar</button>
+    </form>
 @endsection

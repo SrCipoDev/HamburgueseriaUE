@@ -13,11 +13,11 @@
                             <a class="nav-link" href="{{ route('categorias.show', $categoria->nombre_categoria) }}">
                                 {{ $categoria->nombre_categoria }}
                             </a>
-                            <!-- ANGEL //  LOS PRODUCTOS NO RECOGEN LA VARIABLE -->
+                            <!-- NEREA //  HAY QUE PONER MÁS PEQUEÑOS LOS PRODUCTOS Y/O HACER LO DEL DESPLEGABLE -->
                             <ul class="text-center navbar-nav">
                                 @foreach ($categoria->productos as $producto)
                                     <li class="nav-item">
-                                        <a class="nav-link" href="{{ route('producto.show', $producto->nombre_producto) }}">
+                                        <a class="nav-link" href="{{ route('productos.show', $producto->nombre_producto) }}">
                                             {{ $producto->nombre_producto }}
                                         </a>
                                     </li>
