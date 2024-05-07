@@ -15,8 +15,9 @@ class ProductoController extends Controller
     }
     public function create()
     {
-        $categorias = Categoria::all(); // Obtener todas las categorías
-        return view('productos.create', compact('categorias'));
+        $producto = Producto::all();
+        $categorias = Categoria::all();
+        return view('productos.create', compact('producto', 'categorias'));
     }
 
     public function storage(Request $request)
@@ -54,7 +55,6 @@ class ProductoController extends Controller
         $producto = Producto::where('nombre_producto', $nombre_producto)->first();
         $categorias = Categoria::all();
         return view('productos.edit', compact('producto', 'categorias'));
-        /* ANGEL/NEREA VUELVE AQUÍ A REVISAR EL COMPACT */
     }
 
     /*** Update the specified resource in storage.*/
