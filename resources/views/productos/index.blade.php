@@ -6,13 +6,32 @@
     <div class="container contenido-principal">
         <div class="row">
             <h1>Productos</h1>
-{{--             <!--<a href="{{ route('productos.create') }}">Crear Producto</a>--> --}}
             <ul>
-                @foreach ($productos as $producto)
-                <li><a
-                        href="{{ route('productos.show', $producto->nombre_producto) }}">{{ $producto->nombre_producto }}</a>
-                </li>
-            @endforeach
+                @foreach ($productos as $producto){{-- NEREA MIRA EL IF --}}
+                @if (auth()->check())
+                    <form action="{{ route('pedidos.index') }}" method="post">
+                        @csrf
+                        <li><a href="{{ route('productos.show', $producto->nombre_producto) }}">{{ $producto->nombre_producto }}</a>
+                            <input type="number" name="cantidad" min="0" style="width:40px;" placeholder="0">
+                            <input type="submit" value="Añadir al pedido">
+                        </li>
+                    </form>
+                
+                @endif
+                @if (!auth()->check())
+                    <form action="{{ route('login') }}" method="get">
+                        @csrf
+                        <li><a href="{{ route('productos.show', $producto->nombre_producto) }}">{{ $producto->nombre_producto }}</a>
+                            <input type="number" name="cantidad" min="0" style="width:40px;" placeholder="0">
+                            <input type="submit" value="Añadir al pedido">
+                        </li>
+                    </form>
+                
+                @endif
+                @endforeach
             </ul>
             {{ $productos->links() }}
-        @endsection
+        </div>
+    </div>
+@endsection
+

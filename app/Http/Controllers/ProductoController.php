@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
 {
@@ -87,6 +88,7 @@ class ProductoController extends Controller
         return redirect()->route('productos.index')
                         ->withSuccess('Producto eliminado exitosamente.');
     }
+
 
     // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP
     public function __invoke()

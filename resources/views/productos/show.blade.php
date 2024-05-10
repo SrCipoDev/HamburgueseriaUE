@@ -9,7 +9,6 @@
         <p>{{ $producto->descripcion_producto }}</p>
         <p>{{$producto->precio_producto}}</p>
 
-
         <h5 class="text-center">Realiza tu pedido ahora!</h5>
         {{-- NEREA Este foreach en teoría no es necesario, no lo borro por si me estoy equivocando --}}
 {{--         <ul class="text-center navbar-nav">
