@@ -56,7 +56,7 @@
             <!--LOGO HAMBURGUESERIA-->
             <a class="navbar-brand m-auto" href="{{ route('index') }}#home">
                 <!--<img style="width: 10em;" src="img/Logo-Hamburgueseria UE2.png" class="brand-img" alt="logo de nuestra hamburgueseria galicia">-->
-                <span class="brand-txt">Hamburguesaria UE</span>
+                <span class="brand-txt">hamburgueseria UE</span>
             </a>
 
             <!--MENU LATERAL DRCH-->

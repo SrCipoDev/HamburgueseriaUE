@@ -11,14 +11,13 @@
                 <section class="card">
                     <div class="card-header">Creación de un nuevo producto</div>
                     <div class="card-body">
-                        <form action="{{ route('productos.update', $producto->nombre_producto) }}" method="POST">
-                            @method('put')
+                        <form action="{{ route('productos.storage') }}" method="POST">
                             @csrf
                             {{-- es el token, seguridad de laravel --}}
                             <div class="mb-3 row">
                                 <label class="col-md-4 col-form-label text-md-end text-start">Nombre del Producto:</label>
                                 <div class="col-md-6 mb-3">
-                                    <input class="formulario" type="text" name="nombre_producto" value="{{ $producto->nombre_producto }}">
+                                    <input class="formulario" type="text" name="nombre_producto" value="{{ old('nombre_producto') }}">
                                     @error('nombre_producto')
                                         {{ $message }}
                                     @enderror
@@ -26,7 +25,7 @@
                                 </div>
                                 <label class="col-md-4 col-form-label text-md-end text-start">Descripción del Producto:</label>
                                 <div class="col-md-6 mb-3">
-                                    <textarea name="descripcion_producto" rows=4 class="formulario">{{ $producto->descripcion_producto }}</textarea>
+                                    <textarea name="descripcion_producto" rows=4 class="formulario">{{ old('descripcion_producto') }}</textarea>
                                     @error('descripcion_producto')
                                         {{ $message }}
                                     @enderror
@@ -34,7 +33,7 @@
                                 </div>
                                 <label class="col-md-4 col-form-label text-md-end text-start">Precio:</label>
                                 <div class="col-md-6 mb-3">
-                                    <input class="formulario" type="text" name="precio_producto" value="{{ $producto->precio_producto }}">
+                                    <input class="formulario" type="text" name="precio_producto" value="{{ old('precio_producto') }}">
                                     @error('precio_producto')
                                         {{ $message }}
                                     @enderror
@@ -44,7 +43,7 @@
                                 <div class="col-md-6 mb-3">
                                     <select name="id_categoria" class="formulario">
                                         @foreach ($categorias as $categoria)
-                                            <option value="{{ $categoria->id_categoria }}" {{ $categoria->id_categoria == $producto->id_categoria ? 'selected' : '' }}>{{ $categoria->nombre_categoria }}</option>
+                                            <option value="{{ $categoria->id_categoria }}">{{ $categoria->nombre_categoria }}</option>
                                         @endforeach
                                     </select>
                                     @error('id_categoria')
@@ -52,9 +51,10 @@
                                     @enderror
                                     <br>
                                 </div>
+                                
                                 <br>
                                 <div class="mb-3">
-                                    <button type="submit">Editar producto</button>
+                                    <button type="submit">Añadir producto</button>
                                 </div>
                             </div>
                         </form>

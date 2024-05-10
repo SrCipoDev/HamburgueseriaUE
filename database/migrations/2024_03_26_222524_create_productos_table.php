@@ -18,8 +18,7 @@ class CreateProductosTable extends Migration
             $table->string('nombre_producto', 30)->nullable(false);
             $table->text('descripcion_producto')->nullable(false);
             $table->decimal('precio_producto', 5, 2)->unsigned()->nullable(false);
-            //$table->smallInteger('id_categoria')->unsigned()->nullable(false);
-            $table->unsignedBigInteger('id_categoria'); // Cambia a unsignedBigInteger
+            $table->smallInteger('id_categoria')->unsigned()->nullable(false);
             $table->foreign('id_categoria')->references('id_categoria')->on('categorias');
             $table->timestamps();
         });

@@ -7,6 +7,7 @@ use App\Http\Controllers\CartaController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\IngredienteController;
 use App\Http\Controllers\Auth\LoginRegisterController;
+use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
 
 /*
@@ -69,6 +70,10 @@ Route::controller(ProductoController::class)->group(function () {
    Route::delete('productos/{nombre_producto}',       'destroy')  ->name('productos.destroy');
 });
 
+Route::controller(PedidoController::class)->group(function (){
+   Route::post('pedidos',                                'index')    ->name('pedidos.index');
+   Route::get('pedidos',                                 'index')    ->name('pedidos.index');
+});
 // RUTA PARA LA PAGINA DE ADMINISTRACION
 Route::get('/admin', function () {
    return view('admin.index');
