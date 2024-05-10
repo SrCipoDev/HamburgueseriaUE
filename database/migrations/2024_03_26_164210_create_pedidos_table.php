@@ -15,6 +15,9 @@ class CreatePedidosTable extends Migration
     {
         Schema::create('pedidos', function (Blueprint $table) {
             $table->bigIncrements('id_pedido')->unsigned();
+            $table->bigInteger('user_id')->nullable();
+            $table->bigInteger('id_producto')->nullable();
+            $table->string('cantidad')->nullable();
             $table->timestamps();
         });
     }

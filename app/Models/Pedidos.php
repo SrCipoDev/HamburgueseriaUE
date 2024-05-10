@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pedidos extends Model
 {
-    use HasFactory;
+    protected $primaryKey = 'id_pedido';
+    //use HasFactory;
+
+    public function productos()
+    {
+        return $this->hasMany(Producto::class, 'id_categoria');
+    }
 }
