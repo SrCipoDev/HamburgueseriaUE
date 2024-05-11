@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use App\Models\Categoria;
+use App\Models\Pedidos;
 use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
@@ -87,6 +88,25 @@ class ProductoController extends Controller
         $producto->delete();
         return redirect()->route('productos.index')
                         ->withSuccess('Producto eliminado exitosamente.');
+    }
+
+    public function anadirCarrito(Request $request, $id)
+    {
+        dd($request->all());
+        if(Auth::id()){
+
+            $user_id = Auth::user()->id;
+            $cantidad = $request->input('cantidad');
+            $pedido = new Pedidos();
+            $pedido->user_id = $user_id;
+            $pedido->id_producto = $id;
+            $pedido->cantidad = $cantidad;
+            $pedido->save();
+            
+            return redirect()->back();
+        } else{
+            return redirect()->route('login');
+        }
     }
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Producto;
 use App\Models\Pedidos;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,6 +17,24 @@ class PedidoController extends Controller
         return view('pedidos.index'); // Assuming you want to return a view named anadircarrito
     }
 
+    public function anadirCarrito(Request $request, $id)
+    {
+        dd($request->all());
+        if(Auth::id()){
+
+            $user_id = Auth::user()->id;
+            $cantidad = $request->input('cantidad');
+            $pedido = new Pedidos();
+            $pedido->user_id = $user_id;
+            $pedido->id_producto = $id;
+            $pedido->cantidad = $cantidad;
+            $pedido->save();
+            
+            return redirect()->back();
+        } else{
+            return redirect()->route('login');
+        }
+    }
 
  /*    public function show($nombre_producto)
     {
