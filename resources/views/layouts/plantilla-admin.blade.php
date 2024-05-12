@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="Hamburguesería UE es un proyecto de final de curso o TFG, desarrollado para mostrar los conocimientos absorvidos durante el curso. ">
-    <meta name="author" content="Nerea Santos y Ángel Espinosa">
+    <meta name="author" content="Nerea Santos y Ángel Espino">
     <title>@yield('title', 'Hamburgueseria UE')</title>
 
     <!-- FAVICON -->

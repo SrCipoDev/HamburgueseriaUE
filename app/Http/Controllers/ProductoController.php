@@ -90,11 +90,8 @@ class ProductoController extends Controller
                         ->withSuccess('Producto eliminado exitosamente.');
     }
 
-    public function anadirCarrito(Request $request, $id)
+/*     public function anadirCarrito(Request $request, $id)
     {
-        dd($request->all());
-        if(Auth::id()){
-
             $user_id = Auth::user()->id;
             $cantidad = $request->input('cantidad');
             $pedido = new Pedidos();
@@ -104,10 +101,7 @@ class ProductoController extends Controller
             $pedido->save();
             
             return redirect()->back();
-        } else{
-            return redirect()->route('login');
-        }
-    }
+    } */
 
 
     // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP

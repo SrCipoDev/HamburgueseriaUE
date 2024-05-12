@@ -25,7 +25,12 @@ use App\Http\Controllers\ProductoController;
 Route::get('/', IndexController::class)->name('index');
 
 // RUTA PARA PAGINA CARTA
-Route::get('/carta', [CartaController::class, 'index'])->name('carta.index');
+Route::controller(CartaController::class)->group(function(){
+   Route::get('/carta',                                  'index')->name('carta.index');
+   Route::post('/anadircarrito/{id_producto}',           'anadircarrito')->name ('carrito');
+   Route::get('vercarrito/{id_producto}',                'vercarrito') ->name ('vercarrito');
+
+});
 
 // RUTAS PARA LAS VISTAS DE CATEGORIAS
 Route::controller(CategoriaController::class)->group(function () {
@@ -72,8 +77,8 @@ Route::controller(ProductoController::class)->group(function () {
 
 // RUPAS PARA LAS VISTAS DE PEDIDOS
 Route::controller(PedidoController::class)->group(function () {
-   Route::post('pedidos',                                'index')->name('pedidos.index');
-   Route::get('pedidos',                                 'index')->name('pedidos.index');
+   Route::post('pedidos',                                'index')->name('pedidos.index')->middleware('auth');
+   Route::get('pedidos',                                 'index')->name('pedidos.index')->middleware('auth');
 });
 
 // RUTA PARA LA PAGINA DE ADMINISTRACION

@@ -19,9 +19,6 @@ class PedidoController extends Controller
 
     public function anadirCarrito(Request $request, $id)
     {
-        dd($request->all());
-        if(Auth::id()){
-
             $user_id = Auth::user()->id;
             $cantidad = $request->input('cantidad');
             $pedido = new Pedidos();
@@ -31,9 +28,6 @@ class PedidoController extends Controller
             $pedido->save();
             
             return redirect()->back();
-        } else{
-            return redirect()->route('login');
-        }
     }
 
  /*    public function show($nombre_producto)
