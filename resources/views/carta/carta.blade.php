@@ -4,7 +4,7 @@
 @section('content')
     <div class="container">
         <div class="row">
-            <div class="contenido-principal">
+            <div class="">
 
                 <!-- TITULO NUESTRA CARTA  -->
                 <div id="menu" class="container-fluid bg-dark text-light py-5 text-center wow fadeIn">
@@ -40,7 +40,7 @@
                                 aria-labelledby="pills-{{ Illuminate\Support\Str::slug($categoria->nombre_categoria) }}-tab">
                                 <div class="row">
                                     @foreach ($categoria->productos as $producto)
-                                        <form action="{{url('/anadircarrito' , $producto->id_producto)}}" method="post">
+                                        <form action="{{ url('/anadircarrito', $producto->id_producto) }}" method="post">
                                             @csrf
                                             <div class="col-md-4 my-3 my-md-0">
                                                 <div class="card bg-transparent border mb-4">
