@@ -15,6 +15,7 @@
     <!-- ESTILO PRINCIPAL DE LA WEB PUBLICA --->
     <link rel="stylesheet" href="{{ asset('css/style_principal.css') }}">
     <link rel="stylesheet" href="{{ asset('css/carta.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 
 
@@ -41,10 +42,7 @@
                     <a class="nav-link" href="{{ route('categorias.index') }}">Categorias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="">Ingredientes</a>
+                    <a class="nav-link" href="{{ route('productos.index') }}">Productos</a>
                 </li>
             </ul>
 
@@ -71,16 +69,17 @@
 
 
     <!-- PIE DE PAGINA  -->
-    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+    <div class="container-fluid py-5 bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
         <div class="row">
             <div class="col-sm-3">
                 <h3>Email</h3>
-                <P class="text-muted"><a href="mailto:info@hamburgueseriagalicia.es">info@hamburgueseriagalicia.es</a>
+                <P class="text-muted"><a class="nav-link"
+                        href="mailto:info@hamburgueseriagalicia.es">info@hamburgueseriagalicia.es</a>
                 </P>
             </div>
             <div class="col-sm-3">
                 <h3>Teléfono</h3>
-                <P class="text-muted"><a href="tel:917407272">917 40 72 72</a></P>
+                <P class="text-muted"><a class="nav-link" href="tel:917407272">917 40 72 72</a></P>
             </div>
             <div class="col-sm-3">
                 <h3>Visitanos en...</h3>

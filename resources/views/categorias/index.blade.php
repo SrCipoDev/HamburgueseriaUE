@@ -13,13 +13,6 @@
                         <li class="nav-item">
                             <a class="nav-link"
                                 href="{{ route('categorias.edit', $categoria->nombre_categoria) }}">{{ $categoria->nombre_categoria }}</a>
-
-                            <!-- Agregar desplegable de productos -->
-                            <ul class="submenu">
-                                @foreach ($categoria->productos as $producto)
-                                    <li><a href="#">{{ $producto->nombre_producto }}</a></li>
-                                @endforeach
-                            </ul>
                         </li>
                     @endforeach
                 </ul>
@@ -30,23 +23,3 @@
         </div>
     </div>
 @endsection
-
-@push('styles')
-    <style>
-        /* Estilos personalizados */
-        .nav-item:hover .nav-link {
-            color: red;
-            /* Cambiar a rojo al pasar el mouse sobre la categoría */
-        }
-
-        .submenu {
-            display: none;
-            /* Ocultar el submenú por defecto */
-        }
-
-        .nav-item:hover .submenu {
-            display: block;
-            /* Mostrar submenú al pasar el mouse sobre la categoría */
-        }
-    </style>
-@endpush

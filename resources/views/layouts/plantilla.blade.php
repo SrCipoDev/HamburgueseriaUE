@@ -56,7 +56,7 @@
             <!--LOGO HAMBURGUESERIA-->
             <a class="navbar-brand m-auto" href="{{ route('index') }}#home">
                 <!--<img style="width: 10em;" src="img/Logo-Hamburgueseria UE2.png" class="brand-img" alt="logo de nuestra hamburgueseria galicia">-->
-                <span class="brand-txt">hamburgueseria UE</span>
+                <span class="brand-txt">Hamburgueseria UE</span>
             </a>
 
             <!--MENU LATERAL DRCH-->
@@ -78,23 +78,24 @@
 
 
     <!-- PIE DE PAGINA  -->
-    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+    <div class="container-fluid py-5 bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
         <div class="row">
             <div class="col-sm-5">
                 <h3>Email</h3>
-                <P class="text-muted"><a href="mailto:info@hamburgueseriagalicia.es">info@hamburgueseriagalicia.es</a>
+                <P class="text-muted"><a class="nav-link"
+                        href="mailto:info@hamburgueseriagalicia.es">info@hamburgueseriagalicia.es</a>
                 </P>
             </div>
             <div class="col-sm-5">
                 <h3>Teléfono</h3>
-                <P class="text-muted"> <a href="tel:917407272">917 40 72 72</a></P>
+                <P class="text-muted"> <a class="nav-link" href="tel:917407272">917 40 72 72</a></P>
             </div>
             <div class="col-sm-5">
                 <h3>Visitanos en...</h3>
                 <P class="text-muted"> C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid </P>
             </div>
             <div class="col-sm-5">
-                <p><a class="button" href="{{ route('admin.index') }}">Acceso Administrador</p></a>
+                <p><a class="button nav-link" href="{{ route('admin.index') }}">Acceso Administrador</p></a>
             </div>
         </div>
     </div>
