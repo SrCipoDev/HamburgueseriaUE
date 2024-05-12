@@ -6,7 +6,7 @@
     <div class="col-md-8">
 
         <div class="card">
-            <div class="card-header">Acceso usuarios</div>
+            <div class="card-header">Inicio Sesion</div>
             <div class="card-body">
                 <form action="{{ route('authenticate') }}" method="post">
                     @csrf
@@ -22,7 +22,7 @@
                         </div>
                     </div>
                     <div class="mb-3 row">
-                        <label for="password" class="col-md-4 col-form-label text-md-end text-start">password</label>
+                        <label for="password" class="col-md-4 col-form-label text-md-end text-start">contraseña</label>
                         <div class="col-md-6">
                             <input type="password" class="form-control @error('password') is-invalid @enderror"
                                 id="password" name="password">
@@ -31,10 +31,9 @@
                             @endif
                         </div>
                     </div>
-                    <div class="mb-3 row">
+                    <div class="mb-3 row align-items-center">
                         <input type="submit" class="col-md-3 offset-md-5 btn btn-primary" value="Acceder">
                     </div>
-
                 </form>
             </div>
         </div>

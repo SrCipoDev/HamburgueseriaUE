@@ -23,7 +23,8 @@
                                     @enderror
                                     <br>
                                 </div>
-                                <label class="col-md-4 col-form-label text-md-end text-start">Descripción de la Categoría:</label>
+                                <label class="col-md-4 col-form-label text-md-end text-start">Descripción de la
+                                    Categoría:</label>
                                 <div class="col-md-6 mb-3">
                                     <textarea name="descripcion_categoria" rows=4 class="formulario">{{ old('descripcion_categoria') }}</textarea>
                                     @error('descripcion_categoria')
@@ -33,12 +34,16 @@
                                 </div>
                                 <br>
                                 <div class="mb-3">
-                                    <button type="submit button nav-link col-md-3 nav-link button">Crear Categoría</button>
+                                    <button type="submit" class=" button nav-link col-md-3 nav-link button">Crear
+                                        Categoría</button>
                                 </div>
                             </div>
                         </form>
                     </div>
                 </section>
+                <div>
+                    <a class="nav-link py-3" href="{{ route('productos.index') }}">Volver a las categorías</a>
+                </div>
             </div>
         </div>
     </div>
