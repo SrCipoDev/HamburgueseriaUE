@@ -64,6 +64,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#contacto">Contacto</a>
                 </li>
+                @if (auth()->check())
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url('/vercarrito', Auth::user()->id)}}">Carrito</a>
+                </li>
+                @endif
                 <li class="nav-item">
                     <a class="nav-link button" href="{{ route('login') }}">Inicio Sesión</a>
                 </li>

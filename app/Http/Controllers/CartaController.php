@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Carrito;
 use App\Models\Categoria;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+use App\Models\Pedidos;
 
 class CartaController extends Controller
 {
@@ -34,4 +39,29 @@ class CartaController extends Controller
         // Pasar las categorías y la categoría seleccionada a la vista
         return view('carta.carta', compact('categorias', 'categoriaSeleccionada'));
     }
+    public function anadircarrito(Request $request, $id_producto)
+    {
+            $user_id = Auth::User()->id;
+            $producto_id=$id_producto;
+            $cantidad= $request->cantidad;
+            $carrito=new Carrito();
+            $carrito->user_id=$user_id;
+            $carrito->id_producto=$producto_id;
+            $carrito->cantidad=$cantidad;
+            $carrito->save();
+            
+            
+            return redirect()->back();
+    }
+    
+    public function vercarrito(Request $request, $user_id) {
+        $precioTotalCarrito = DB::table('carritos')
+                                ->join('productos', 'carritos.id_producto', '=', 'productos.id_producto')
+                                ->where('carritos.user_id', $user_id)
+                                ->sum(DB::raw('productos.precio_producto * carritos.cantidad'));
+
+        $carrito = Carrito::where('user_id', $user_id)->get();
+        return view('vercarrito', ['carrito' => $carrito, 'precioTotalCarrito' => $precioTotalCarrito]);
+    }
+    
 }
