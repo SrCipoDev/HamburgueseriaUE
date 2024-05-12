@@ -10,11 +10,14 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
 {
+    // FUNCIÓN INDEX
     public function index()
     {
-        $productos = Producto::paginate(10);/* with('categoria')->get(); */ // Recupera todos los productos con sus categorías
+        $productos = Producto::all();/* with('categoria')->get(); */ // Recupera todos los productos con sus categorías
         return view('productos.index', compact('productos')); // Pasa las categorías a la vista
     }
+
+    //FUNCIÓN CREATE
     public function create()
     {
         $producto = Producto::all();
@@ -22,6 +25,7 @@ class ProductoController extends Controller
         return view('productos.create', compact('producto', 'categorias'));
     }
 
+    //FUNCIÓN STORAGE
     public function storage(Request $request)
     {
         $request->validate([
@@ -45,13 +49,14 @@ class ProductoController extends Controller
         //redirecciona al producto recien creada
     }
 
+    // FUNCION SHOW
     public function show($nombre_producto)
     {
-        $producto = Producto::where('nombre_producto', $nombre_producto)->first();
-        //Al estar utilizando el nombre para las urls en lugar del id, hay que ponerlo así
+        $producto = Producto::where('nombre_producto', $nombre_producto)->first();        //Al estar utilizando el nombre para las urls en lugar del id, hay que ponerlo así
         return view('productos.show', compact('producto'));
     }
 
+    // FUNCION EDIT
     public function edit($nombre_producto)
     {
         $producto = Producto::where('nombre_producto', $nombre_producto)->first();
@@ -59,7 +64,8 @@ class ProductoController extends Controller
         return view('productos.edit', compact('producto', 'categorias'));
     }
 
-    /*** Update the specified resource in storage.*/
+
+    // FUNCION UPDATE
     public function update(Request $request, $nombre_producto)
     {
 
@@ -82,15 +88,16 @@ class ProductoController extends Controller
         return redirect()->route('productos.show', ['nombre_producto' => $producto->nombre_producto]);
     }
 
+    // FUNCION DESTROY
     public function destroy($nombre_producto)
     {
         $producto = Producto::where('nombre_producto', $nombre_producto)->first();
         $producto->delete();
         return redirect()->route('productos.index')
-                        ->withSuccess('Producto eliminado exitosamente.');
+            ->withSuccess('Producto eliminado exitosamente.');
     }
 
-/*     public function anadirCarrito(Request $request, $id)
+    /*     public function anadirCarrito(Request $request, $id)
     {
             $user_id = Auth::user()->id;
             $cantidad = $request->input('cantidad');
@@ -107,11 +114,7 @@ class ProductoController extends Controller
     // AÑADIDO PARA EL FICHERO CARTA.BLADE.PHP
     public function __invoke()
     {
-        // Obtener las categorías que se mostrarán en la carta
-        $productos = Producto::all();
-
-        // Pasar las categorías a la vista
-        return view('carta', compact('categorias'));
-    } // FIN  DE LA VISTA CARTA
-
+        $productos = Producto::all();                   // Obtener las categorías que se mostrarán en la carta
+        return view('carta', compact('categorias'));    // Pasar las categorías a la vista
+    }
 }

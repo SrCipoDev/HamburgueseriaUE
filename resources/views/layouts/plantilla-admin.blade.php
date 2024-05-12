@@ -39,6 +39,9 @@
             <!--MENU LATERAL IZQ-->
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a class="nav-link" href="{{ route('index') }}">Vista cliente</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="{{ route('categorias.index') }}">Categorias</a>
                 </li>
                 <li class="nav-item">
@@ -55,7 +58,7 @@
             <!--MENU LATERAL DRCH-->
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#contacto">Contacto</a>
+                    <a class="nav-link" href="{{ route('index') }}">Contacto</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link button" href="{{ route('login') }}">Inicio Sesión</a>

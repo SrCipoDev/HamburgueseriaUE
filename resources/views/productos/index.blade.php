@@ -1,27 +1,52 @@
-@extends('layouts.plantilla')
+@extends('layouts.plantilla-admin')
 
-@section('title', 'Hamburgueseria UE - Menú')
+@section('title', 'Hamburgesería UE - Productos')
 
 @section('content')
     <div class="container contenido-principal">
         <div class="row">
-            <div>
+            <div class="col-md-20">
                 <h3>Productos</h3>
-                <ul class="nav flex-column">
-                    @foreach ($productos as $producto)
-                        {{-- NEREA MIRA EL IF --}}
-
-                            <form action="{{ route('pedidos.index', $producto->nombre_producto) }}" method="post">
-                                @csrf
-                                <li><a
-                                        href="{{ route('productos.show', $producto->nombre_producto) }}">{{ $producto->nombre_producto }}</a>
-                                    
-                                    <input type="submit" value="Añadir al pedido">
-                                </li>
-                            </form>
-                    @endforeach
-                </ul>
-                {{ $productos->links() }}
+                <br>
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead class="text-white">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Acciones</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-white">
+                            @foreach ($productos as $producto)
+                                <tr>
+                                    <td>{{ $producto->nombre_producto }}</td>
+                                    <td>{{ $producto->descripcion_producto }}</td>
+                                    <td>{{ $producto->precio_producto }}€</td>
+                                    <td>
+                                        <a href="{{ route('productos.edit', $producto->nombre_producto) }}"
+                                            class="button nav-link">Editar</a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('productos.create', $producto->nombre_producto) }}"
+                                            class="button nav-link">Crear</a>
+                                    </td>
+                                    <td>
+                                        <form action="{{ route('productos.destroy', $producto->nombre_producto) }}"
+                                            method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button type="submit" class="button nav-link">Eliminar</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
