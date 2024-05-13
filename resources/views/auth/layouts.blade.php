@@ -127,9 +127,11 @@
                 <h3>Visitanos en...</h3>
                 <P class="text-muted"> C. Tajo, s/n, 28670 Villaviciosa de Odón, Madrid </P>
             </div>
-            <div class="col-sm-5">
-                <p><a class="button" href="{{ route('admin.index') }}">Acceso Administrador</p></a>
-            </div>
+            @if (auth()->check())
+                <div class="col-sm-5">
+                    <p><a class="button" href="{{ route('admin.index') }}">Acceso Administrador</p></a>
+                </div>
+            @endif
         </div>
     </div>
     <!-- BARRA DERECHOS RESERVADOS -->
