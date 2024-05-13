@@ -5,7 +5,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\CartaController;
 
 use App\Http\Controllers\CategoriaController;
-use App\Http\Controllers\IngredienteController;
+
 use App\Http\Controllers\Auth\LoginRegisterController;
 use App\Http\Controllers\PedidoController;
 use App\Http\Controllers\ProductoController;
@@ -42,16 +42,6 @@ Route::controller(CategoriaController::class)->group(function () {
    Route::delete('categorias/{nombre_categoria}',     'destroy')->name('categorias.destroy');
 });
 
-// RUTAS PARA LAS VISTAS DE INGREDIENTES
-Route::controller(IngredienteController::class)->group(function () {
-   Route::get('ingredientes',                               'index')->name('ingredientes.index');
-   Route::get('ingredientes/create',                        'create')->name('ingredientes.create');
-   Route::get('ingredientes/{nombre_ingrediente}',          'show')->name('ingredientes.show');
-   Route::post('ingredientes',                              'storage')->name('ingredientes.storage');
-   Route::get('ingredientes/{nombre_ingrediente}/edit',     'edit')->name('ingredientes.edit');
-   Route::put('ingredientes/{nombre_ingrediente}',          'update')->name('ingredientes.update');
-   Route::delete('ingredientes/{nombre_ingrediente}',       'destroy')->name('ingredientes.destroy');
-});
 
 // RUTAS PARA LAS VISTAS DE AUTENTIFICACION -- LOGIN -- REGISTER 
 Route::controller(LoginRegisterController::class)->group(function () {

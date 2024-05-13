@@ -40,20 +40,20 @@
                                 aria-labelledby="pills-{{ Illuminate\Support\Str::slug($categoria->nombre_categoria) }}-tab">
                                 <div class="row">
                                     @foreach ($categoria->productos as $producto)
-                                        <form action="{{ url('/anadircarrito', $producto->id_producto) }}" method="post">
+                                        <form action="{{ url('/anadircarrito', $producto->id_producto) }}" method="post"
+                                            class="">
                                             @csrf
-                                            <div class="col-md-4 my-3 my-md-0">
+                                            <div class="my-3 my-md-0"> <!--col-md-4 -->
                                                 <div class="card bg-transparent border mb-4">
-                                                    <img src="{{ $producto->imagen_producto }}"
+                                                    <img src="{{ $producto->ruta_imagen }}"
                                                         alt="{{ $producto->nombre_producto }}"
-                                                        class="rounded-0 card-img-top mg-responsive">
+                                                        class="rounded-0 card-img-top mg-responsive img-carta">
                                                     <div class="card-body">
                                                         <h4 class="pt20 pb20 text-white">{{ $producto->nombre_producto }}
                                                         </h4>
                                                         <p class="text-white">{{ $producto->descripcion_producto }}</p>
                                                         <p class="text-white">{{ $producto->precio_producto }}€</p>
                                                         <div class="d-flex justify-content-center">
-                                                            <!-- Contenedor para centrar horizontalmente -->
                                                             @if (auth()->check())
                                                                 <input type="number" name="cantidad" min="1"
                                                                     style="width: 40px;" value="1">
@@ -71,9 +71,6 @@
                         @endforeach
                     </div> <!-- FIN MOSTRAR PRODUCTOS DE CADA CATEGORIA-->
                 </div> <!-- FIN NUESTRA CARTA HAMBURGUESERIA UE -->
-
-
-
             </div>
         </div>
     </div>
