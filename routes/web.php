@@ -25,11 +25,10 @@ use App\Http\Controllers\ProductoController;
 Route::get('/', IndexController::class)->name('index');
 
 // RUTA PARA PAGINA CARTA
-Route::controller(CartaController::class)->group(function(){
+Route::controller(CartaController::class)->group(function () {
    Route::get('/carta',                                  'index')->name('carta.index');
-   Route::post('/anadircarrito/{id_producto}',           'anadircarrito')->name ('carrito');
-   Route::get('vercarrito/{id_producto}',                'vercarrito') ->name ('vercarrito');
-
+   Route::post('/anadircarrito/{id_producto}',           'anadircarrito')->name('carrito');
+   Route::get('vercarrito/{id_producto}',                'vercarrito')->name('vercarrito');
 });
 
 // RUTAS PARA LAS VISTAS DE CATEGORIAS
@@ -85,3 +84,6 @@ Route::controller(PedidoController::class)->group(function () {
 Route::get('/admin', function () {
    return view('admin.index');
 })->name('admin.index');
+
+//RUTA PARA ELIMINAR PRODUCTOS DEL CARRITO
+Route::delete('/eliminarDelCarrito/{id}', [CartaController::class, 'eliminarDelCarrito'])->name('eliminarDelCarrito');

@@ -37,7 +37,7 @@
                                 <label class="col-md-4 col-form-label text-md-end text-start">Precio:</label>
                                 <div class="col-md-6 mb-3">
                                     <input class="formulario" type="text" name="precio_producto"
-                                        value="{{ $producto->precio_producto }}">
+                                        value="{{ $producto->precio_producto }}€">
                                     @error('precio_producto')
                                         {{ $message }}
                                     @enderror
