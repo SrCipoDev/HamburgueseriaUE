@@ -45,7 +45,10 @@ textarea {
 
 }
 
-
+.boton-compra {
+    max-width: 250px;
+    text-align: center;
+}
 
 /*.btn:not(:disabled):not(.disabled) {
     cursor: pointer;

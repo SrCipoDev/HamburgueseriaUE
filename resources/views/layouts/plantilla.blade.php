@@ -49,7 +49,7 @@
                     <a class="nav-link" href="{{ route('index') }}#about">Sobre Nosotros</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('index') }}#menu">Nuestra Carta</a>
+                    <a class="nav-link" href="{{ route('carta.index') }}">Nuestra Carta</a>
                 </li>
             </ul>
 
@@ -65,9 +65,9 @@
                     <a class="nav-link" href="#contacto">Contacto</a>
                 </li>
                 @if (auth()->check())
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url('/vercarrito', Auth::user()->id)}}">Carrito</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url('/vercarrito', Auth::user()->id) }}">Carrito</a>
+                    </li>
                 @endif
                 <li class="nav-item">
                     <a class="nav-link button" href="{{ route('login') }}">Inicio Sesión</a>
@@ -117,7 +117,6 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 
 </body>
 

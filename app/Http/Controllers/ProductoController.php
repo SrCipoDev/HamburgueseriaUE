@@ -45,7 +45,7 @@ class ProductoController extends Controller
 
 
         $producto->save();
-        return redirect()->route('productos.show', ['nombre_producto' => $producto->nombre_producto]);
+        return redirect()->route('productos.index');
         //redirecciona al producto recien creada
     }
 
@@ -85,7 +85,8 @@ class ProductoController extends Controller
 
 
         $producto->save();
-        return redirect()->route('productos.show', ['nombre_producto' => $producto->nombre_producto]);
+        return redirect()->route('productos.index');
+        //return redirect()->route('productos.show', ['nombre_producto' => $producto->nombre_producto]);
     }
 
     // FUNCION DESTROY

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Carrito;
 use App\Models\Categoria;
+use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -21,47 +22,56 @@ class CartaController extends Controller
         return view('carta.carta', compact('categorias'));
     }*/
 
-
+    // FUNCION INDEX 
     public function index(Request $request)
     {
-        // Obtener las categorías que se mostrarán en la carta
-        $categorias = Categoria::with('productos')->get();;
+        $categorias = Categoria::with('productos')->get();     // Obtener las categorías que se mostrarán en la carta
+        $categoriaSeleccionada = null;                         // Establecer la variable $categoriaSeleccionada en null por defecto
 
-        // Establecer la variable $categoriaSeleccionada en null por defecto
-        $categoriaSeleccionada = null;
-
-        // Verificar si se ha enviado una categoría específica en la solicitud
-        if ($request->has('categoria')) {
+        if ($request->has('categoria')) {               // Verificar si se ha enviado una categoría específica en la solicitud
             // Si se ha enviado una categoría, establecer la variable $categoriaSeleccionada en el valor de la categoría seleccionada
             $categoriaSeleccionada = $request->categoria;
         }
-
-        // Pasar las categorías y la categoría seleccionada a la vista
-        return view('carta.carta', compact('categorias', 'categoriaSeleccionada'));
+        return view('carta.carta', compact('categorias', 'categoriaSeleccionada'));             // Pasar las categorías y la categoría seleccionada a la vista
     }
+
+
+    // FUNCION AÑADIR AL CARRITO
     public function anadircarrito(Request $request, $id_producto)
     {
-            $user_id = Auth::User()->id;
-            $producto_id=$id_producto;
-            $cantidad= $request->cantidad;
-            $carrito=new Carrito();
-            $carrito->user_id=$user_id;
-            $carrito->id_producto=$producto_id;
-            $carrito->cantidad=$cantidad;
-            $carrito->save();
-            
-            
-            return redirect()->back();
-    }
-    
-    public function vercarrito(Request $request, $user_id) {
-        $precioTotalCarrito = DB::table('carritos')
-                                ->join('productos', 'carritos.id_producto', '=', 'productos.id_producto')
-                                ->where('carritos.user_id', $user_id)
-                                ->sum(DB::raw('productos.precio_producto * carritos.cantidad'));
+        $user_id = Auth::User()->id;
+        $producto_id = $id_producto;
+        $cantidad = $request->cantidad;
+        $carrito = new Carrito();
+        $carrito->user_id = $user_id;
+        $carrito->id_producto = $producto_id;
+        $carrito->cantidad = $cantidad;
+        $carrito->save();
 
-        $carrito = Carrito::where('user_id', $user_id)->get();
+        return redirect()->back();
+    }
+
+
+    // FUNCION VER CARRITO
+    public function vercarrito(Request $request, $user_id)
+    {
+        $precioTotalCarrito = DB::table('carritos')
+            ->join('productos', 'carritos.id_producto', '=', 'productos.id_producto')
+            ->where('carritos.user_id', $user_id)
+            ->sum(DB::raw('productos.precio_producto * carritos.cantidad'));
+
+        $carrito = Carrito::where('user_id', $user_id)
+            ->join('productos', 'carritos.id_producto', '=', 'productos.id_producto')
+            ->select('carritos.*', 'productos.nombre_producto', 'productos.precio_producto', 'productos.descripcion_producto')
+            ->get();
         return view('vercarrito', ['carrito' => $carrito, 'precioTotalCarrito' => $precioTotalCarrito]);
     }
-    
+
+
+    // FUNCION ELIMINAR DEL CARRITO
+    public function eliminarDelCarrito($id)
+    {
+        Carrito::findOrFail($id)->delete();     // Encuentra y elimina el producto del carrito
+        return redirect()->back()->with('success', 'Producto eliminado del carrito correctamente.');    // Redirecciona de vuelta al carrito después de eliminar el producto
+    }
 }

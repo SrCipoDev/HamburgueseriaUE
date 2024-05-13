@@ -6,16 +6,18 @@
     <div class="container contenido-principal">
         <div class="row">
             <div>
-                <h3>Productos</h3>
+                <h3>Producto</h3>
                 <br>
                 <ul class="nav flex-colum">
-                    @foreach ($productos as $producto)
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ route('productos.edit', $producto->nombre_producto) }}">
-                                {{ $producto->nombre_producto }}
-                            </a>
-                        </li>
-                    @endforeach
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('productos.edit', $producto->nombre_producto) }}">
+                            {{ $producto->nombre_producto }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <span>{{ $producto->descripcion_producto }}</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
