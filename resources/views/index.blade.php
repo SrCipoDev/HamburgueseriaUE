@@ -108,7 +108,7 @@
                             @foreach ($categoria->productos as $producto)
                                 <div class="col-md-4 my-3 my-md-0">
                                     <div class="card bg-transparent border mb-4">
-                                        <img src="{{ $producto->imagen_producto }}" alt="{{ $producto->nombre_producto }}"
+                                        <img src="{{ $producto->ruta_imagen }}" alt="{{ $producto->nombre_producto }}"
                                             class="rounded-0 card-img-top mg-responsive">
                                         <div class="card-body">
                                             <h4 class="pt20 pb20 text-white">{{ $producto->nombre_producto }}</h4>
@@ -116,7 +116,12 @@
                                             <p class="text-white">{{ $producto->precio_producto }}€</p>
                                             <div class="d-flex justify-content-center">
                                                 <!-- Contenedor para centrar horizontalmente -->
-                                                <button type="submit" class="nav-link button"> + Añadir al carrito</button>
+                                                @if (auth()->check())
+                                                    <input type="number" name="cantidad" min="1"
+                                                        style="width: 40px;" value="1">
+                                                    <button type="submit" class="nav-link button" value="anadircarrito"> +
+                                                        Añadir al carrito</button>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>

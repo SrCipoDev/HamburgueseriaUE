@@ -54,3 +54,27 @@ textarea {
     cursor: pointer;
     background-color: red;
 }*/
+
+.productos-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra los elementos horizontalmente */
+}
+
+.producto-card {
+    flex: 0 0 calc(33.33% - 20px); /* Ajusta el tamaño de las tarjetas de producto */
+    margin: 10px; /* Espacio entre las tarjetas */
+}
+
+@media (max-width: 768px) {
+    .producto-card {
+        flex: 0 0 calc(50% - 20px); /* Ajusta el tamaño de las tarjetas en dispositivos pequeños */
+    }
+}
+
+/*.img-carta {
+    max-height: 300px;
+    max-width: max-content;
+    align-items: center;
+    text-align: center;
+}*/
